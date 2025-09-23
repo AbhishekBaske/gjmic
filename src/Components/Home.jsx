@@ -22,22 +22,21 @@ const HomeWrapper = styled.div`
   text-align: center;
   overflow: hidden;
 
-  /* Gradient wave: tall background so we can scroll it */
   background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 25%, #121212 75%, #000000 100%);
-  background-size: 100% 200%; /* double height for smooth vertical scroll */
+  background-size: 100% 200%;
 `;
 
 const Logos = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(40px, 8vw, 120px); /* gap shrinks on small screens */
+  gap: clamp(40px, 8vw, 120px);
   margin-bottom: 20px;
-  flex-wrap: wrap; /* allow wrapping if needed on very small screens */
+  flex-wrap: wrap;
 `;
 
 const LogoImage = styled.img`
-  width: clamp(80px, 20vw, 160px); /* responsive width */
+  width: clamp(80px, 20vw, 160px);
   height: auto;
   opacity: 0;
 `;
@@ -49,7 +48,7 @@ const EventDetails = styled.div`
 `;
 
 const EventTitle = styled.p`
-  font-size: clamp(2.5rem, 6vw, 3rem);
+  font-size: clamp(2.2rem, 6vw, 3rem); /* same size for all titles */
   font-weight: 900;
   margin-bottom: 20px;
   opacity: 0;
@@ -69,11 +68,6 @@ const EventTitle = styled.p`
 
   -webkit-text-stroke: 1px black;
   text-stroke: 1px black;
-
-  /* First line (Golden Jubilee) bigger */
-  &:first-child {
-    font-size: clamp(3rem, 8vw, 4.5rem);
-  }
 `;
 
 const RegistrationDetails = styled.div`
@@ -138,9 +132,9 @@ const Home = () => {
       { scale: 1, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)", delay: 1.5 }
     );
 
-    // ---------- Animate background gradient like a wave ----------
+    // Animate background gradient like a wave
     gsap.to(wrapperRef.current, {
-      backgroundPosition: "0% 100%", // move background from top to bottom
+      backgroundPosition: "0% 100%",
       duration: 10,
       repeat: -1,
       yoyo: true,
