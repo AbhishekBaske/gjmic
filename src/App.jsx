@@ -2,6 +2,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Components/Home";
+import SweetHome from "./Components/SweetHome";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Navbar from "./Components/Navbar";
@@ -31,7 +32,7 @@ export default function App() {
         <Navbar />
         <MainContent>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<SweetHome />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/themes" element={<div className="page"><h1>Themes</h1></div>} />

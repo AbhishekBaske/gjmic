@@ -31,12 +31,13 @@ const Logos = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: clamp(40px, 8vw, 120px); /* gap shrinks on small screens */
   margin-bottom: 20px;
+  flex-wrap: wrap; /* allow wrapping if needed on very small screens */
 `;
 
 const LogoImage = styled.img`
-  width: 160px;
+  width: clamp(80px, 20vw, 160px); /* responsive width */
   height: auto;
   opacity: 0;
 `;
@@ -48,7 +49,7 @@ const EventDetails = styled.div`
 `;
 
 const EventTitle = styled.p`
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 6vw, 3rem);
   font-weight: 900;
   margin-bottom: 20px;
   opacity: 0;
@@ -68,6 +69,11 @@ const EventTitle = styled.p`
 
   -webkit-text-stroke: 1px black;
   text-stroke: 1px black;
+
+  /* First line (Golden Jubilee) bigger */
+  &:first-child {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+  }
 `;
 
 const RegistrationDetails = styled.div`
@@ -75,6 +81,7 @@ const RegistrationDetails = styled.div`
   justify-content: center;
   gap: 12px;
   margin-top: 20px;
+  flex-wrap: wrap;
 `;
 
 const ButtonGold = styled(Link)`
