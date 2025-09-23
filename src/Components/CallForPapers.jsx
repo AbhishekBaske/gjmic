@@ -207,7 +207,7 @@ const FooterNote = styled.p`
 
 // --- React Component ---
 
-export default function Callforpapers() {
+export default function CallForPapers() {
   const container = useRef(null);
 
   useGSAP(() => {

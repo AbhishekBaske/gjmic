@@ -9,7 +9,7 @@ import Navbar from "./Components/Navbar";
 import Footbar from "./Components/Footbar";
 import Theme from "./Components/Theme";
 import styled from "styled-components";
-import Callforpapers from "./Components/Callforpapers.jsx";
+import Callforpapers from "./Components/CallForPapers.jsx";
 import ImportantDates from "./Components/ImportantDates";
 // Styled components
 const AppContainer = styled.div`
