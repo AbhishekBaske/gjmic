@@ -9,7 +9,7 @@ import Navbar from "./Components/Navbar";
 import Footbar from "./Components/Footbar";
 import Theme from "./Components/Theme";
 import styled from "styled-components";
-import CallForPapers from "./Components/Callforpapers";
+import Callforpapers from "./Components/Callforpapers";
 import ImportantDates from "./Components/ImportantDates";
 // Styled components
 const AppContainer = styled.div`
@@ -39,7 +39,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/themes" element={<Theme />} />
             <Route path="/agenda" element={<div className="page"><h1>Agenda</h1></div>} />
-            <Route path="/call-for-papers" element={<CallForPapers />} />
+            <Route path="/call-for-papers" element={<Callforpapers />} />
             <Route path="/important-dates" element={<ImportantDates />} />
             <Route path="/committee" element={<div className="page"><h1>Committee</h1></div>} />
             <Route path="/speakers" element={<div className="page"><h1>Speakers</h1></div>} />
