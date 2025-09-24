@@ -1,7 +1,9 @@
+// Home.jsx
 import React, { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";
+import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 import bitsindri from "../assets/bit.png";
 import logo2 from "../assets/logo2.png";
 
@@ -22,7 +24,13 @@ const HomeWrapper = styled.div`
   text-align: center;
   overflow: hidden;
 
-  background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 25%, #121212 75%, #000000 100%);
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f5f5f5 25%,
+    #121212 75%,
+    #000000 100%
+  );
   background-size: 100% 200%;
 `;
 
@@ -48,7 +56,7 @@ const EventDetails = styled.div`
 `;
 
 const EventTitle = styled.p`
-  font-size: clamp(2.2rem, 6vw, 3rem); /* same size for all titles */
+  font-size: clamp(2.2rem, 6vw, 3rem);
   font-weight: 900;
   margin-bottom: 20px;
   opacity: 0;
@@ -97,12 +105,54 @@ const ButtonGold = styled(Link)`
 
 const ButtonOutline = styled(ButtonGold)``;
 
+// ---------- Extra Info (Venue + Date) ----------
+const ExtraDetails = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const DetailRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f5f5c0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+    transform: translateY(-3px);
+  }
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #d4af37;
+`;
+
 // ---------- Main Component ----------
 const Home = () => {
   const titlesRef = useRef([]);
   const leftLogoRef = useRef(null);
   const rightLogoRef = useRef(null);
   const buttonsRef = useRef([]);
+  const detailsRef = useRef([]);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -122,14 +172,42 @@ const Home = () => {
     gsap.fromTo(
       titlesRef.current,
       { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.2, stagger: 0.3, ease: "power3.out", delay: 0.5 }
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        stagger: 0.3,
+        ease: "power3.out",
+        delay: 0.5,
+      }
     );
 
     // Buttons fade-in
     gsap.fromTo(
       buttonsRef.current,
       { scale: 0.8, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)", delay: 1.5 }
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+        delay: 1.5,
+      }
+    );
+
+    // Venue + Date fade-in after buttons
+    gsap.fromTo(
+      detailsRef.current,
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        stagger: 0.3,
+        ease: "power2.out",
+        delay: 2.5,
+      }
     );
 
     // Animate background gradient like a wave
@@ -150,9 +228,15 @@ const Home = () => {
       </Logos>
 
       <EventDetails>
-        <EventTitle ref={(el) => (titlesRef.current[0] = el)}>Golden Jubilee</EventTitle>
-        <EventTitle ref={(el) => (titlesRef.current[1] = el)}>Mining Innovation</EventTitle>
-        <EventTitle ref={(el) => (titlesRef.current[2] = el)}>Conclave</EventTitle>
+        <EventTitle ref={(el) => (titlesRef.current[0] = el)}>
+          Golden Jubilee
+        </EventTitle>
+        <EventTitle ref={(el) => (titlesRef.current[1] = el)}>
+          Mining Innovation
+        </EventTitle>
+        <EventTitle ref={(el) => (titlesRef.current[2] = el)}>
+          Conclave
+        </EventTitle>
       </EventDetails>
 
       <RegistrationDetails>
@@ -163,6 +247,22 @@ const Home = () => {
           Brochure
         </ButtonOutline>
       </RegistrationDetails>
+
+      {/* Extra Details Section */}
+      <ExtraDetails>
+        <DetailRow ref={(el) => (detailsRef.current[0] = el)}>
+          <IconWrapper>
+            <FaMapMarkerAlt />
+          </IconWrapper>
+          <span>Deshpande Auditorium, B.I.T. Sindri</span>
+        </DetailRow>
+        <DetailRow ref={(el) => (detailsRef.current[1] = el)}>
+          <IconWrapper>
+            <FaCalendarAlt />
+          </IconWrapper>
+          <span>15th – 16th November, 2025</span>
+        </DetailRow>
+      </ExtraDetails>
     </HomeWrapper>
   );
 };

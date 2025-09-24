@@ -1,61 +1,102 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import departmentImage from "../assets/bitminig.jpg"; // Using your existing image path
 
-// Importing icons from react-icons
-import { FiCalendar, FiHardDrive, FiUsers, FiAward } from "react-icons/fi";
+// --- Asset Imports ---
+import instituteImage from "../assets/bitadmin.jpeg"; // Image for the main institute
+import departmentImage from "../assets/bitminig.jpg"; // Image for the Mining department
 
-/* ---------------- Data for BIT Sindri ---------------- */
+// --- Icon Imports from react-icons ---
+import {
+  FiCalendar,
+  FiHardDrive,
+  FiUsers,
+  FiAward,
+  FiMapPin,
+} from "react-icons/fi";
 
-const cardData = [
+/*
+================================================================================
+|                               Data Section                                   |
+================================================================================
+*/
+
+// --- Data for BIT Sindri Institute ---
+const instituteCardData = [
   {
     icon: <FiCalendar />,
     title: "Established in 1949",
-    text: "Initially founded as the College of Mechanical and Electrical Engineering, it was relocated to Sindri in 1950.",
+    text: "Founded as the College of Mechanical & Electrical Engineering, it stands as one of India's oldest and most esteemed technical institutes.",
   },
   {
-    icon: <FiHardDrive />,
-    title: "Mining Dept. Since 1975",
-    text: "Established by the Govt. of Bihar to meet the urgent need for qualified mining engineers post-nationalization of the mineral industry.",
+    icon: <FiMapPin />,
+    title: "Sprawling 450-Acre Campus",
+    text: "A fully residential campus that fosters a rich, immersive academic and personal growth environment for its students.",
   },
   {
     icon: <FiUsers />,
-    title: "Pioneering Legacy",
-    text: "One of the oldest and most prestigious engineering institutes in India, with a sprawling 450-acre residential campus.",
+    title: "A Legacy of Leaders",
+    text: "BIT Sindri has produced a vast network of alumni who are leaders and innovators in technology, business, and public service worldwide.",
   },
   {
     icon: <FiAward />,
-    title: "Strategic Excellence",
-    text: "Located in India's prime mineral belt, fostering deep industry-institute linkages with top mining companies and research bodies.",
+    title: "Academic Excellence",
+    text: "As a premier autonomous institute, it is renowned for its rigorous curriculum, high academic standards, and contribution to research.",
   },
 ];
 
-/* ---------------- Keyframes for animations ---------------- */
+// --- Data for Mining Engineering Department ---
+const miningDeptCardData = [
+  {
+    icon: <FiCalendar />,
+    title: "Dept. Established in 1975",
+    text: "The department was founded by the Government of Bihar to address the growing demand for skilled mining engineers in the nation.",
+  },
+  {
+    icon: <FiHardDrive />,
+    title: "Strategic Foundation",
+    text: "Its creation was a direct response to the nationalization of the mineral industry, aiming to bolster India's self-reliance in the sector.",
+  },
+  {
+    icon: <FiMapPin />,
+    title: "Located in India's Mineral Hub",
+    text: "Situated in the heart of India's prime mineral belt, offering unparalleled industry exposure with leading mining corporations.",
+  },
+  {
+    icon: <FiAward />,
+    title: "Producing Industry Pioneers",
+    text: "Known for its state-of-the-art labs and expert faculty, the department is a leader in producing top-tier mining professionals.",
+  },
+];
+
+/*
+================================================================================
+|                        Keyframes & Styled Components                         |
+================================================================================
+*/
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 `;
 
-/* ---------------- Styled Components ---------------- */
-
 const PageWrapper = styled.div`
-  background-color: #1a1a1a; /* Entire page background color */
+  background-color: #1a1a1a;
   min-height: 100vh;
+  padding: 4rem 1rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack sections vertically */
   align-items: center;
-  padding: 2rem 0; /* Add some padding around the main section */
+  gap: 4rem; /* Space between the two sections */
 `;
 
 const AboutSection = styled.section`
   display: flex;
-  background: radial-gradient(circle at top, #3a3a3a, #1a1a1a); /* Rich dark radial gradient */
-  font-family: 'Georgia', 'Times New Roman', serif; /* A classic, elegant font */
+  background: radial-gradient(circle at top, #3a3a3a, #1a1a1a);
+  font-family: 'Georgia', 'Times New Roman', serif;
   padding: 5rem 3rem;
   max-width: 1200px;
-  width: 90%; /* Make it responsive */
-  margin: 0 auto; /* Center the section */
+  width: 95%;
+  margin: 0 auto;
   border-radius: 18px;
   gap: 3rem;
   align-items: flex-start;
@@ -82,7 +123,7 @@ const LeftColumn = styled.div`
 const HighlightTag = styled.span`
   display: inline-block;
   background-color: rgba(255, 215, 0, 0.1);
-  color: #ffd700; /* Gold color */
+  color: #ffd700;
   border: 1px solid rgba(255, 215, 0, 0.4);
   padding: 0.4rem 1rem;
   border-radius: 999px;
@@ -102,7 +143,7 @@ const Title = styled.h1`
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
   span {
-    color: #ffd700; /* Gold color */
+    color: #ffd700;
     text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
   }
 
@@ -131,7 +172,6 @@ const InfoCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: #cccccc;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
   &:hover {
@@ -143,13 +183,13 @@ const InfoCard = styled.div`
 
 const IconWrapper = styled.div`
   font-size: 2rem;
-  color: #ffd700; /* Gold color */
+  color: #ffd700;
 `;
 
 const CardTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffd700; /* Gold color */
+  color: #ffd700;
   margin: 0;
 `;
 
@@ -158,7 +198,6 @@ const CardText = styled.p`
   line-height: 1.6;
   margin: 0;
   color: #dcdcdc;
-  /* Switched to sans-serif for body text for better readability */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 `;
 
@@ -200,27 +239,41 @@ const ImageCaption = styled.div`
   padding: 1rem 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  color: #ffd700; /* Gold color */
+  color: #ffd700;
   text-align: right;
   font-weight: 500;
   font-size: 1rem;
   border: 1px solid rgba(255, 215, 0, 0.2);
   line-height: 1.4;
+
+   @media (max-width: 576px) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 1rem;
+    text-align: center;
+  }
 `;
 
-/* ---------------- Component ---------------- */
 
-export default function AboutBitSindriJubilee() {
+/*
+================================================================================
+|                          Main Exported Component                             |
+================================================================================
+*/
+
+export default function AboutPage() {
   return (
     <PageWrapper>
+      {/* --- Section 1: About BIT Sindri (The Institute) --- */}
       <AboutSection>
         <LeftColumn>
-          <HighlightTag>Institute Highlights</HighlightTag>
+          <HighlightTag>The Institute</HighlightTag>
           <Title>
-            BIT Sindri's <span>Department of Mining Engineering</span>
+            A Legacy of Excellence: <span>BIT Sindri</span>
           </Title>
           <CardsGrid>
-            {cardData.map((card, index) => (
+            {instituteCardData.map((card, index) => (
               <InfoCard key={index}>
                 <IconWrapper>{card.icon}</IconWrapper>
                 <CardTitle>{card.title}</CardTitle>
@@ -229,15 +282,45 @@ export default function AboutBitSindriJubilee() {
             ))}
           </CardsGrid>
           <Description>
-            With decades of history, the department has been instrumental in shaping India's mining industry. It provides students with state-of-the-art facilities and a curriculum designed for the evolving demands of the global mining landscape.
+            For over seven decades, BIT Sindri has been a beacon of technical education in India, fostering innovation and nurturing talent to build the nation and serve society.
           </Description>
         </LeftColumn>
         <RightColumn>
-          <Image src={departmentImage} alt="BIT Sindri Campus" />
+          <Image src={instituteImage} alt="BIT Sindri Administrative Building" />
           <ImageCaption>
             <b>BIT Sindri</b>
             <br />
-            A Legacy of Engineering Excellence
+            Pioneering Technical Education Since 1949
+          </ImageCaption>
+        </RightColumn>
+      </AboutSection>
+
+      {/* --- Section 2: About the Mining Engineering Department --- */}
+      <AboutSection>
+        <LeftColumn>
+          <HighlightTag>Departmental Spotlight</HighlightTag>
+          <Title>
+            Department of <span>Mining Engineering</span>
+          </Title>
+          <CardsGrid>
+            {miningDeptCardData.map((card, index) => (
+              <InfoCard key={index}>
+                <IconWrapper>{card.icon}</IconWrapper>
+                <CardTitle>{card.title}</CardTitle>
+                <CardText>{card.text}</CardText>
+              </InfoCard>
+            ))}
+          </CardsGrid>
+          <Description>
+            Instrumental in shaping India's mining industry, the department provides students with a state-of-the-art curriculum designed for the evolving demands of the global mineral landscape.
+          </Description>
+        </LeftColumn>
+        <RightColumn>
+          <Image src={departmentImage} alt="BIT Sindri Mining Department Building" />
+          <ImageCaption>
+            <b>Mining Engineering</b>
+            <br />
+            Powering the Nation's Mineral Sector
           </ImageCaption>
         </RightColumn>
       </AboutSection>

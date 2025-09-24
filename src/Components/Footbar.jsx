@@ -76,18 +76,36 @@ const Icon = styled.img`
 const DownloadButton = styled.a`
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #e0e6ff;
-  color: #000;
-  font-weight: bold;
-  padding: 0.6rem 1rem;
-  margin-top: 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  gap: 10px;
+  background: linear-gradient(90deg, #ffd966 0%, #d4af37 100%);
+  color: #111827;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+  border-radius: 10px;
+  text-decoration: none !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.12), inset 0 -2px 0 rgba(0,0,0,0.06);
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
 
   &:hover {
-    background: #bfcfff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.18), inset 0 -2px 0 rgba(0,0,0,0.06);
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.12);
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
   }
 `;
 
@@ -145,18 +163,22 @@ export default function Footbar() {
       <FooterGrid>
         {/* Column 1: Conference Info */}
         <Column>
-          <Title className="animate-content">GJMIC-2026</Title>
+          <Title className="animate-content">GJMIC-2025</Title>
           <LogoContainer>
             {/* Add a specific class for animating only these logos */}
             <LogoImg src={bitsinfo} alt="BIT Logo" className="animate-logo" />
             <LogoImg src={logo} alt="Conference Logo" className="animate-logo" />
           </LogoContainer>
           <InfoText className="animate-content">Golden Jubilee Mining Innovation Conclave</InfoText>
-          <InfoText className="animate-content">15-16 November 2026</InfoText>
+          <InfoText className="animate-content">15-16 November 2025</InfoText>
           <InfoText className="animate-content">Venue: Deshpande Auditorium, BIT Sindri, Dhanbad</InfoText>
-          <DownloadButton href="/brochure.pdf" target="_blank" className="animate-content">
+          <DownloadButton 
+            href="https://ff8b7462-bf5d-4091-a027-ea793d206a45.filesusr.com/ugd/90c67b_1bace0c5c3444dc9af2407a06f378596.pdf?index=true"
+            target="_blank" 
+            className="animate-content"
+          >
             <img src={download} alt="Download" width="16" height="16" />
-            Download Brochure
+            Download Brochure 
           </DownloadButton>
         </Column>
 
@@ -165,15 +187,15 @@ export default function Footbar() {
           <Title className="animate-content">Contact Us</Title>
           <ContactItem className="animate-content">
             <Icon src={mail} alt="Email" />
-            <span>gjmic2026@bitsindri.ac.in</span>
+            <span>gjmic2025@bitsindri.ac.in</span>
           </ContactItem>
           <ContactItem className="animate-content">
             <Icon src={phone} alt="Phone" />
-            <span>Prof. Anindya Sinha: +91-7766908001</span>
+            <span>Prof. Tanmay Dasgupta: +918840144886</span>
           </ContactItem>
           <ContactItem className="animate-content">
             <Icon src={phone} alt="Phone" />
-            <span>Prof. Siddhartha Agarwal: +91-9335536412</span>
+            <span>Prof. Roshan Kumar: +918877091602</span>
           </ContactItem>
         </Column>
 
@@ -181,15 +203,15 @@ export default function Footbar() {
         <Column>
           <Title className="animate-content">Stay Guide</Title>
           <InfoText className="animate-content">
-            <strong>EDC, IIT (ISM) Dhanbad</strong>
+            <strong>BIT Sindri, Dhanbad</strong>
           </InfoText>
           <ContactItem className="animate-content">
             <Icon src={mail} alt="Email" />
-            <span>edcsah@iitism.ac.in</span>
+            <span>adityapandey.min@bitsindri.ac.in</span>
           </ContactItem>
           <ContactItem className="animate-content">
             <Icon src={phone} alt="Phone" />
-            <span>+91-326-223-5001</span>
+            <span>+91-9614919301</span>
           </ContactItem>
           <ContactItem className="animate-content">
             <Icon src={globe} alt="Website" />
@@ -212,7 +234,7 @@ export default function Footbar() {
       </FooterGrid>
 
       <BottomNote className="animate-content">
-        © 2026 GJMIC Conference. All rights reserved. <br />
+        © 2025 GJMIC. All rights reserved. <br />
         Organized by Department of Mining Engineering, BIT Sindri
       </BottomNote>
     </FooterWrapper>

@@ -1,16 +1,18 @@
-// App.js
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Home from "./Components/Home";
+import React, { useRef } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Footbar from "./Components/Footbar";
 import SweetHome from "./Components/SweetHome";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
-import Navbar from "./Components/Navbar";
-import Footbar from "./Components/Footbar";
 import Theme from "./Components/Theme";
-import styled from "styled-components";
 import CallForPapers from "./Components/CallForPapers.jsx";
 import ImportantDates from "./Components/ImportantDates";
+import Announce from "./Components/Announce.jsx";
+import Committee from "./Components/Committee.jsx";
+import ScrollToTop from "./ScrollToTop";
+import styled from "styled-components";
+
 // Styled components
 const AppContainer = styled.div`
   display: flex;
@@ -28,31 +30,36 @@ const FooterWrapper = styled.footer`
 `;
 
 export default function App() {
-  return (
-    
-      <AppContainer>
-        <Navbar />
-        <MainContent>
-          <Routes>
-            <Route path="/" element={<SweetHome />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/themes" element={<Theme />} />
-            <Route path="/agenda" element={<div className="page"><h1>Agenda</h1></div>} />
-            <Route path="/call-for-papers" element={<CallForPapers />} />
-            <Route path="/important-dates" element={<ImportantDates />} />
-            <Route path="/committee" element={<div className="page"><h1>Committee</h1></div>} />
-            <Route path="/speakers" element={<div className="page"><h1>Speakers</h1></div>} />
-            <Route path="/gallery" element={<div className="page"><h1>Gallery</h1></div>} />
-            <Route path="/sponsorship-tiers" element={<div className="page"><h1>Sponsorship Tiers</h1></div>} />
-            <Route path="/register" element={<div className="page"><h1>Register</h1></div>} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </MainContent>
-        <FooterWrapper>
-          <Footbar />
-        </FooterWrapper>
-      </AppContainer>
+  const footerRef = useRef(null);
+  const location = useLocation();
 
+  // Scroll target: footer only if on /contact
+  const scrollTarget = location.pathname === "/contact" ? footerRef.current : null;
+
+  return (
+    <AppContainer>
+      <ScrollToTop scrollTarget={scrollTarget} />
+      <Navbar />
+      <MainContent>
+        <Routes>
+          <Route path="/" element={<SweetHome />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/themes" element={<Theme />} />
+          <Route path="/agenda" element={<Announce />} />
+          <Route path="/call-for-papers" element={<CallForPapers />} />
+          <Route path="/important-dates" element={<ImportantDates />} />
+          <Route path="/committee" element={<Committee />} />
+          <Route path="/speakers" element={<Announce />} />
+          <Route path="/gallery" element={<div className="page"><h1>Gallery</h1></div>} />
+          <Route path="/sponsorship-tiers" element={<Announce />} />
+          <Route path="/register" element={<div className="page"><h1>Register</h1></div>} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </MainContent>
+      <FooterWrapper ref={footerRef}>
+        <Footbar />
+      </FooterWrapper>
+    </AppContainer>
   );
 }
