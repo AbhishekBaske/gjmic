@@ -202,8 +202,8 @@ const CommitteePage = () => {
   ];
 
   const studentRepresentatives = [
-    { name: "Abhay Kumar", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917667030596", email: "abhaykumarr2468@gmail.com" },
     { name: "Banti Kumar Saw", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917488696254", email: "hellobanti1234@gmail.com" },
+    { name: "Abhay Kumar", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917667030596", email: "abhaykumarr2468@gmail.com" },
   ];
 
   const renderMemberCard = (member) => (

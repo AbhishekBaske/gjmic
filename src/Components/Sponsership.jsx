@@ -223,7 +223,7 @@ const InfoPanel = styled.div`
 `;
 
 const InfoTitle = styled.h3`
-  color: ${goldColor};
+  color: white;
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 15px;
@@ -233,10 +233,12 @@ const InfoTitle = styled.h3`
 `;
 
 const InfoText = styled.p`
-  color: #e0e0e0;
+  color: #ffffff;
   line-height: 1.6;
   margin-bottom: 10px;
   font-size: 1.05rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
   &:last-child {
     margin-bottom: 0;
@@ -252,8 +254,10 @@ const BulletList = styled.ul`
     position: relative;
     padding-left: 25px;
     margin-bottom: 12px;
-    color: #d0d0d0;
+    color: #ffffff;
     line-height: 1.6;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
     &::before {
       content: "•";
@@ -287,15 +291,19 @@ const BankDetailItem = styled.div`
   &:nth-child(odd) {
     background: ${goldGradient};
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     justify-content: center;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
   
   &:nth-child(even) {
     background: ${darkBg};
-    color: #f5f5f5;
-    font-weight: 500;
+    color: #ffffff;
+    font-weight: 600;
     justify-content: center;
+    font-size: 1.05rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
 
   &:first-child {
