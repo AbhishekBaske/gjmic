@@ -1,10 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import placeholderImg from "../assets/user.png"; // placeholder image
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Injecting CSS globally
 const CommitteePageStyles = `
@@ -24,7 +20,6 @@ const CommitteePageStyles = `
   }
 
   .main-title {
-    font-family: 'Poppins', sans-serif;
     font-size: clamp(2.5rem, 6vw, 4rem);
     text-align: center;
     margin-bottom: 60px;
@@ -36,7 +31,6 @@ const CommitteePageStyles = `
   }
 
   .section-title {
-    font-family: 'Poppins', sans-serif;
     text-align: center;
     font-size: clamp(2rem, 5vw, 2.8rem);
     color: #FFD700;
@@ -49,9 +43,28 @@ const CommitteePageStyles = `
 
   .member-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     justify-content: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .member-grid.single-row {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .member-grid.double-row {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    max-width: 800px;
+  }
+
+  .member-grid.triple-row {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    max-width: 1200px;
   }
 
   .member-card {
@@ -66,8 +79,16 @@ const CommitteePageStyles = `
     align-items: center;
     gap: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* animation prep */
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(40px);
+  }
+
+  .member-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-out;
   }
 
   .member-card:hover {
@@ -130,48 +151,47 @@ const CommitteePageStyles = `
 `;
 
 const CommitteePage = () => {
-  const containerRef = useRef(null);
-
+  // Inject styles once
   useEffect(() => {
-    // Inject styles
     const styleElement = document.createElement("style");
     styleElement.innerHTML = CommitteePageStyles;
     document.head.appendChild(styleElement);
 
-    // GSAP Animations
-    if (containerRef.current) {
-      const sections = containerRef.current.querySelectorAll(".committee-section");
-
-      sections.forEach((section) => {
-        const cards = section.querySelectorAll(".member-card");
-
-        gsap.to(cards, {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
+    // Intersection Observer for animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // animate only once
+          }
         });
-      });
-    }
+      },
+      { threshold: 0.2 }
+    );
+
+    const cards = document.querySelectorAll(".member-card");
+    cards.forEach((card) => observer.observe(card));
 
     return () => {
       document.head.removeChild(styleElement);
+      observer.disconnect();
     };
   }, []);
 
   const organisingCommittee = [
     { name: "Shri Rahul Kumar Purwar, IAS", role: "Chief Patron", dept: "Principal Secretary (Department of Higher and Technical Education)\nGovernment of Jharkhand" },
+  ];
+
+  const secondRow = [
     { name: "Prof. Pankaj Rai", role: "Patron", dept: "Director, BIT-Sindri, Dhanbad -828123" },
     { name: "Prof. P K Singh", role: "Chairman & Convener", dept: "Head of the department\nMining Engineering and Geology Department\nBIT-Sindri, Dhanbad -828123", phone: "+919123295611", email: "hod.mining@bitsindri.ac.in" },
+  ];
+
+  const thirdRow = [
     { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" },
     { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918877091602", email: "roshan.min@bitsindri.ac.in" },
-    { name: "Prof Aditya Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in" },
+    { name: "Aditya Kumar", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in" },
   ];
 
   const coreCommitteeMembers = [
@@ -210,19 +230,22 @@ const CommitteePage = () => {
   );
 
   return (
-    <div className="committee-container" ref={containerRef}>
+    <div className="committee-container">
       <h1 className="main-title">Our Committee</h1>
-      <section className="committee-section">
+      
+      <section>
         <h2 className="section-title">Correspondence & Organising Committee</h2>
-        <div className="member-grid">{organisingCommittee.map(renderMemberCard)}</div>
+        <div className="member-grid single-row">{organisingCommittee.map(renderMemberCard)}</div>
+        <div className="member-grid double-row" style={{ marginTop: "30px" }}>{secondRow.map(renderMemberCard)}</div>
+        <div className="member-grid triple-row" style={{ marginTop: "30px" }}>{thirdRow.map(renderMemberCard)}</div>
       </section>
 
-      <section className="committee-section">
+      <section>
         <h2 className="section-title">Core Committee</h2>
         <div className="member-grid">{coreCommitteeMembers.map(renderMemberCard)}</div>
       </section>
 
-      <section className="committee-section">
+      <section>
         <h2 className="section-title">Student Representatives</h2>
         <div className="member-grid">{studentRepresentatives.map(renderMemberCard)}</div>
       </section>

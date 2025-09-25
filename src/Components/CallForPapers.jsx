@@ -241,7 +241,7 @@ export default function CallForPapers() {
       <Header>
         <MainTitle className="reveal">Call for <span>Papers</span></MainTitle>
         <Subtitle className="reveal">
-          Contribute your research to shape the future of Digital Intelligence in Green Mining.
+          Share your innovative research and contribute to the Golden Jubilee Mining Innovation Conclave 2025. Join mining professionals, researchers, and industry experts in celebrating 50 years of excellence while shaping the future of mining technology and sustainable practices.
         </Subtitle>
         <ButtonContainer className="reveal">
           <PrimaryButton><FaDownload /> Download template for Abstract</PrimaryButton>
@@ -256,9 +256,9 @@ export default function CallForPapers() {
             <ContentSection>
               <h3><FaEnvelope /> Submission Details</h3>
               <DetailsList>
-                <ListItem><FaEnvelope /> Email to: digmin2025@itism.ac.in</ListItem>
-                <ListItem><FaCalendarCheck /> Deadline: 15 August 2025</ListItem>
-                <ListItem><FaFileWord /> Format: MS Word document</ListItem>
+                <ListItem><FaEnvelope /> Email to: gjmic@bitsindri.ac.in</ListItem>
+                <ListItem><FaCalendarCheck /> Deadline: 31 October 2025</ListItem>
+                <ListItem><FaFileWord /> Format: MS Word document/Pdf</ListItem>
               </DetailsList>
             </ContentSection>
             <ContentSection>
@@ -294,7 +294,7 @@ export default function CallForPapers() {
             </ContentSection>
           </CardContent>
           <FooterNote>
-            <FaInfoCircle />All formatting requirements are mandatory for paper acceptance. Use Times New Roman (TNR) font throughout.
+            <FaInfoCircle />For any query related to paper submission contact Prof. Manas Kumar Mallick email: manaskmallick@bitsindri.ac.in Ph: 8555916172
           </FooterNote>
         </InfoCard>
       </GuidelinesGrid>

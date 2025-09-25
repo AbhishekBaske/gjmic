@@ -130,7 +130,7 @@ const ProgressInner = styled.div`
   background-size: 200% 200%;
   animation: ${goldShine} 4s linear infinite;
   border-radius: 6px;
-  width: ${(props) => props.progress}%;
+  width: var(--progress-width, 0%);
   transition: width 0.5s ease;
 `;
 
@@ -220,7 +220,7 @@ const Countdown = () => {
           <span>Celebration Day</span>
         </ProgressLabels>
         <ProgressOuter>
-          <ProgressInner progress={progress} />
+          <ProgressInner style={{ '--progress-width': `${progress}%` }} />
         </ProgressOuter>
       </ProgressContainer>
 

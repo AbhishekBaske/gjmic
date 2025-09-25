@@ -5,7 +5,6 @@ import BWE from "../../assets/bucketwheelexcavator.mp4";
 
 /* ---------------- Global styles & variables ---------------- */
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800;900&display=swap');
   :root{
     --gold-1:#ffd700;
     --gold-2:#ffdf80;
@@ -13,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     --text-cream:#fefce8;
   }
   *{box-sizing:border-box}
-  body{font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;}
+  body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; margin:0;}
 `;
 
 /* ---------------- subtle shimmer for text ---------------- */

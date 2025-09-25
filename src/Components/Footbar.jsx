@@ -173,7 +173,7 @@ export default function Footbar() {
           <InfoText className="animate-content">15-16 November 2025</InfoText>
           <InfoText className="animate-content">Venue: Deshpande Auditorium, BIT Sindri, Dhanbad</InfoText>
           <DownloadButton 
-            href="https://ff8b7462-bf5d-4091-a027-ea793d206a45.filesusr.com/ugd/90c67b_1bace0c5c3444dc9af2407a06f378596.pdf?index=true"
+            href="https://github.com/AbhishekBaske/pdf-files/raw/f21ffad93ecc84fd38efcb61ac89a551a50a400f/GJMIC-2025%20Brochure.pdf"
             target="_blank" 
             className="animate-content"
           >
@@ -187,15 +187,15 @@ export default function Footbar() {
           <Title className="animate-content">Contact Us</Title>
           <ContactItem className="animate-content">
             <Icon src={mail} alt="Email" />
-            <span>gjmic2025@bitsindri.ac.in</span>
+            <span>gjmic@bitsindri.ac.in</span>
           </ContactItem>
           <ContactItem className="animate-content">
             <Icon src={phone} alt="Phone" />
-            <span>Prof. Tanmay Dasgupta: +918840144886</span>
+            <span>Prof. Tanmay Dasgupta: +91-8840144886</span>
           </ContactItem>
           <ContactItem className="animate-content">
             <Icon src={phone} alt="Phone" />
-            <span>Prof. Roshan Kumar: +918877091602</span>
+            <span>Prof. Roshan Kumar: +91-8877091602</span>
           </ContactItem>
         </Column>
 
@@ -215,7 +215,9 @@ export default function Footbar() {
           </ContactItem>
           <ContactItem className="animate-content">
             <Icon src={globe} alt="Website" />
-            <span>Website</span>
+            <a href="https://www.bitsindri.ac.in" target="_blank" rel="noopener noreferrer" style={{color: '#eaeaea', textDecoration: 'none'}}>
+              Website - www.bitsindri.ac.in
+            </a>
           </ContactItem>
         </Column>
 

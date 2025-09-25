@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 /* ---------------- Global Styles ---------------- */
 const GlobalStyle = createGlobalStyle`
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Poppins', sans-serif; background-color: #070707; color: #fefce8; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; background-color: #070707; color: #fefce8; }
 `;
 
 /* ---------------- Animations ---------------- */

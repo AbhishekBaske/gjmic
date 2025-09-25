@@ -12,6 +12,7 @@ import Announce from "./Components/Announce.jsx";
 import Committee from "./Components/Committee.jsx";
 import ScrollToTop from "./ScrollToTop";
 import styled from "styled-components";
+import Register from "./Components/Register.jsx";
 
 // Styled components
 const AppContainer = styled.div`
@@ -33,12 +34,9 @@ export default function App() {
   const footerRef = useRef(null);
   const location = useLocation();
 
-  // Scroll target: footer only if on /contact
-  const scrollTarget = location.pathname === "/contact" ? footerRef.current : null;
-
   return (
     <AppContainer>
-      <ScrollToTop scrollTarget={scrollTarget} />
+      <ScrollToTop />
       <Navbar />
       <MainContent>
         <Routes>
@@ -53,7 +51,7 @@ export default function App() {
           <Route path="/speakers" element={<Announce />} />
           <Route path="/gallery" element={<div className="page"><h1>Gallery</h1></div>} />
           <Route path="/sponsorship-tiers" element={<Announce />} />
-          <Route path="/register" element={<div className="page"><h1>Register</h1></div>} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainContent>

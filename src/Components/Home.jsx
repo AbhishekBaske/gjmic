@@ -243,7 +243,13 @@ const Home = () => {
         <ButtonGold to="/register" ref={(el) => (buttonsRef.current[0] = el)}>
           Register
         </ButtonGold>
-        <ButtonOutline to="/brochure" ref={(el) => (buttonsRef.current[1] = el)}>
+        <ButtonOutline 
+          as="a"
+          href="https://github.com/AbhishekBaske/pdf-files/raw/f21ffad93ecc84fd38efcb61ac89a551a50a400f/GJMIC-2025%20Brochure.pdf" 
+          target="_blank"
+          rel="noopener noreferrer"
+          ref={(el) => (buttonsRef.current[1] = el)}
+        >
           Brochure
         </ButtonOutline>
       </RegistrationDetails>

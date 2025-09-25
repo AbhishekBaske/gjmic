@@ -156,6 +156,8 @@ const MobileMenu = styled.div`
   padding: 80px 20px 20px;
   transform: ${(props) => (props.open ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const MobileMenuList = styled.ul`
@@ -165,11 +167,16 @@ const MobileMenuList = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
 `;
 
 const MobileCta = styled.div`
-  margin-top: auto;
-  padding-top: 20px;
+  margin-top: 20px;
+  padding: 20px 0 0;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 // --- Component ---
