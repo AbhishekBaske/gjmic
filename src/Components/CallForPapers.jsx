@@ -241,7 +241,7 @@ export default function CallForPapers() {
       <Header>
         <MainTitle className="reveal">Call for <span>Papers</span></MainTitle>
         <Subtitle className="reveal">
-          Share your innovative research and contribute to the Golden Jubilee Mining Innovation Conclave 2025. Join mining professionals, researchers, and industry experts in celebrating 50 years of excellence while shaping the future of mining technology and sustainable practices.
+          Share your innovative research and contribute to the Golden Jubilee Mining Innovation Conclave 2025. Join mining professionals, researchers, and industry experts in celebrating 50 years of excellence while shaping the future of mining technology and sustainable practices.Your paper will be published in our souvenir.
         </Subtitle>
         <ButtonContainer className="reveal">
           <PrimaryButton><FaDownload /> Download template for Abstract</PrimaryButton>

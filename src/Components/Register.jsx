@@ -240,6 +240,38 @@ const InfoText = styled.p`
   }
 `;
 
+const ActionSection = styled.div`
+  text-align: center;
+  margin-top: 50px;
+  animation: fadeInUp 0.6s ease-out 0.6s both;
+`;
+
+const RegistrationButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: ${goldGradient};
+  color: white;
+  padding: 18px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &:hover {
+    background: linear-gradient(90deg, #f9d976, #d4af37);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.5);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+`;
+
 const Register = () => {
   const feesData = [
     {
@@ -339,6 +371,17 @@ const Register = () => {
             <InfoText>• Corporate registrations include networking sessions & materials</InfoText>
           </InfoPanel>
         </FeesSection>
+
+        <ActionSection>
+          <RegistrationButton 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeNO3Ioi6qHNL7MUISBuxszpJO_yrhislwGD4gU_N1_YoLTdg/viewform" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Users size={20} />
+            Register Now
+          </RegistrationButton>
+        </ActionSection>
       </MaxWidthWrapper>
     </Container>
   );

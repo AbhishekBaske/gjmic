@@ -5,11 +5,14 @@ import logo from "../assets/logo.png";
 
 // --- Styled Components ---
 const SiteHeader = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 60;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: #ffffff;
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const NavInner = styled.div`

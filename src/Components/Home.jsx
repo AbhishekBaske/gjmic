@@ -94,8 +94,7 @@ const ButtonGold = styled(Link)`
   color: #2f0c0c;
   font-weight: bold;
   transition: 0.3s ease-in-out;
-  opacity: 0;
-  transform: scale(0.8);
+  display: inline-block;
 
   &:hover {
     background: linear-gradient(90deg, #f9d976, #d4af37);
@@ -240,7 +239,13 @@ const Home = () => {
       </EventDetails>
 
       <RegistrationDetails>
-        <ButtonGold to="/register" ref={(el) => (buttonsRef.current[0] = el)}>
+        <ButtonGold 
+          as="a"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeNO3Ioi6qHNL7MUISBuxszpJO_yrhislwGD4gU_N1_YoLTdg/viewform" 
+          target="_blank"
+          rel="noopener noreferrer"
+          ref={(el) => (buttonsRef.current[0] = el)}
+        >
           Register
         </ButtonGold>
         <ButtonOutline 

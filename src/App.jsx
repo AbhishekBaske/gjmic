@@ -23,6 +23,7 @@ const AppContainer = styled.div`
 
 const MainContent = styled.main`
   flex: 1;
+  padding-top: 90px; /* Account for fixed navbar height */
 `;
 
 const FooterWrapper = styled.footer`

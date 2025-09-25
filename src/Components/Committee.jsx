@@ -125,7 +125,7 @@ const CommitteePageStyles = `
     white-space: pre-line;
     color: #bbbbbb;
     font-size: 0.95rem;
-    text-align: justify;
+    text-align: center;
   }
 
   .member-contact {
@@ -180,7 +180,7 @@ const CommitteePage = () => {
   }, []);
 
   const organisingCommittee = [
-    { name: "Shri Rahul Kumar Purwar, IAS", role: "Chief Patron", dept: "Principal Secretary (Department of Higher and Technical Education)\nGovernment of Jharkhand" },
+    { name: "Shri Rahul Kumar Purwar, IAS", role: "Chief Patron", dept: "Principal Secretary\n (Department of Higher and Technical Education)\nGovernment of Jharkhand" },
   ];
 
   const secondRow = [
@@ -191,7 +191,7 @@ const CommitteePage = () => {
   const thirdRow = [
     { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" },
     { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918877091602", email: "roshan.min@bitsindri.ac.in" },
-    { name: "Aditya Kumar", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in" },
+    { name: "Prof. Aditya Kumar Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in" },
   ];
 
   const coreCommitteeMembers = [
