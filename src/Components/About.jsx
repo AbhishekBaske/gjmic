@@ -84,9 +84,19 @@ const PageWrapper = styled.div`
   min-height: 100vh;
   padding: 4rem 1rem;
   display: flex;
-  flex-direction: column; /* Stack sections vertically */
+  flex-direction: column;
   align-items: center;
-  gap: 4rem; /* Space between the two sections */
+  gap: 4rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+    gap: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 0.5rem;
+    gap: 2rem;
+  }
 `;
 
 const AboutSection = styled.section`
@@ -108,8 +118,23 @@ const AboutSection = styled.section`
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: center;
-    padding: 3rem 1.5rem;
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+    width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2.5rem 1.5rem;
     gap: 2rem;
+    width: 95%;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    width: 98%;
+    border-radius: 10px;
   }
 `;
 
@@ -132,6 +157,18 @@ const HighlightTag = styled.span`
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    letter-spacing: 0.5px;
+  }
 `;
 
 const Title = styled.h1`
@@ -149,6 +186,14 @@ const Title = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
   }
 `;
 
@@ -158,8 +203,15 @@ const CardsGrid = styled.div`
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -179,11 +231,34 @@ const InfoCard = styled.div`
     border-color: rgba(255, 215, 0, 0.7);
     box-shadow: 0 12px 25px rgba(255, 215, 0, 0.15);
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    gap: 0.8rem;
+    
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.2rem;
+    gap: 0.6rem;
+    border-radius: 10px;
+  }
 `;
 
 const IconWrapper = styled.div`
   font-size: 2rem;
   color: #ffd700;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const CardTitle = styled.h3`
@@ -191,6 +266,14 @@ const CardTitle = styled.h3`
   font-weight: 600;
   color: #ffd700;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const CardText = styled.p`
@@ -199,6 +282,16 @@ const CardText = styled.p`
   margin: 0;
   color: #dcdcdc;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 `;
 
 const Description = styled.p`
@@ -206,6 +299,17 @@ const Description = styled.p`
   font-size: 1.1rem;
   line-height: 1.8;
   font-style: italic;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 `;
 
 const RightColumn = styled.div`
@@ -246,12 +350,22 @@ const ImageCaption = styled.div`
   border: 1px solid rgba(255, 215, 0, 0.2);
   line-height: 1.4;
 
-   @media (max-width: 576px) {
+  @media (max-width: 768px) {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 576px) {
     position: relative;
     right: auto;
     bottom: auto;
     margin-top: 1rem;
     text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
   }
 `;
 
