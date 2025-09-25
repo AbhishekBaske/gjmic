@@ -14,7 +14,7 @@ import ScrollToTop from "./ScrollToTop";
 import styled from "styled-components";
 import Register from "./Components/Register.jsx";
 import Sponsorship from "./Components/Sponsership.jsx";
-import ToBeUpdated from "./Components/Tobeupdated.jsx";
+import ToBeUpdated from "./Components/ToBeUpdated.jsx";
 
 // Styled components
 const AppContainer = styled.div`
