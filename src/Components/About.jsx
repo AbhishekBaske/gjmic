@@ -335,16 +335,15 @@ const Image = styled.img`
 `;
 
 const ImageCaption = styled.div`
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background-color: rgba(10, 10, 10, 0.8);
+  position: relative;
+  margin-top: 1.5rem;
+  background-color: rgba(10, 10, 10, 0.9);
   backdrop-filter: blur(8px);
   padding: 1rem 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   color: #ffd700;
-  text-align: right;
+  text-align: center;
   font-weight: 500;
   font-size: 1rem;
   border: 1px solid rgba(255, 215, 0, 0.2);
@@ -434,7 +433,7 @@ export default function AboutPage() {
           <ImageCaption>
             <b>Mining Engineering</b>
             <br />
-            Powering the Nation's Mineral Sector
+            Powering the Nation's Mining Sector
           </ImageCaption>
         </RightColumn>
       </AboutSection>

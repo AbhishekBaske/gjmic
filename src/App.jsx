@@ -13,6 +13,8 @@ import Committee from "./Components/Committee.jsx";
 import ScrollToTop from "./ScrollToTop";
 import styled from "styled-components";
 import Register from "./Components/Register.jsx";
+import Sponsorship from "./Components/Sponsership.jsx";
+import ToBeUpdated from "./Components/Tobeupdated.jsx";
 
 // Styled components
 const AppContainer = styled.div`
@@ -50,8 +52,8 @@ export default function App() {
           <Route path="/important-dates" element={<ImportantDates />} />
           <Route path="/committee" element={<Committee />} />
           <Route path="/speakers" element={<Announce />} />
-          <Route path="/gallery" element={<div className="page"><h1>Gallery</h1></div>} />
-          <Route path="/sponsorship-tiers" element={<Announce />} />
+          <Route path="/gallery" element={<ToBeUpdated />} />
+          <Route path="/sponsorship-tiers" element={<Sponsorship />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

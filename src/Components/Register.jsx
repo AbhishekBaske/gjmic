@@ -349,19 +349,6 @@ const Register = () => {
 
           <InfoPanel>
             <InfoTitle>
-              <FileText size={20} />
-              Important Information
-            </InfoTitle>
-            <InfoText>
-              <strong>Early Bird Deadline:</strong> October 7th, 2025
-            </InfoText>
-            <InfoText>
-              <strong>Registration Form:</strong> Attached as a separate sheet for your convenience
-            </InfoText>
-          </InfoPanel>
-
-          <InfoPanel>
-            <InfoTitle>
               <Calendar size={20} />
               Registration Guidelines
             </InfoTitle>

@@ -191,7 +191,7 @@ const CommitteePage = () => {
   const thirdRow = [
     { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" },
     { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918877091602", email: "roshan.min@bitsindri.ac.in" },
-    { name: "Prof. Aditya Kumar Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in" },
+    { name: "Prof. Aditya Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in" },
   ];
 
   const coreCommitteeMembers = [
