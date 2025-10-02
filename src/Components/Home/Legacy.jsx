@@ -24,7 +24,7 @@ const shimmer = keyframes`
 /* ---------------- Layout ---------------- */
 const Section = styled.section`
   background: radial-gradient(circle at 10% 10%, rgba(255,215,0,0.03), transparent 10%), linear-gradient(180deg,#0b0b0b 0%, #050505 100%);
-  min-height: 100vh; /* full viewport without huge black space */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,10 +89,10 @@ const Line = styled.div`
 
 const WordWrap = styled(motion.span)`
   display: inline-block;
+  transform: translate3d(0,0,0); /* force GPU layer */
+  will-change: transform, opacity;
   padding: 0.08rem 0.28rem;
   border-radius: 6px;
-  transform-origin: center;
-  will-change: transform, opacity;
 `;
 
 const WordInner = styled(motion.span)`
@@ -104,6 +104,8 @@ const WordInner = styled(motion.span)`
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 12px rgba(0,0,0,0.6);
   position: relative;
+
+  /* Shimmer applied only at line level */
   &::after{
     content: '';
     position: absolute;
@@ -114,22 +116,23 @@ const WordInner = styled(motion.span)`
     transform: skewX(-15deg);
     mix-blend-mode: screen;
     background-size: 200% 100%;
-    animation: ${shimmer} 2.8s linear infinite;
+    animation: ${shimmer} 4s linear infinite;
     opacity: 0.85;
   }
 `;
 
-const usePrefersReduced = () => {
-  const shouldReduce = useReducedMotion();
-  return shouldReduce;
-};
+const usePrefersReduced = () => useReducedMotion();
 
 const wordEnter = {
   hidden: { opacity: 0, y: 18 },
-  visible: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.12, duration: 0.55, ease: [0.22,0.9,0.3,1] } })
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.06, duration: 0.45, ease: [0.22,0.9,0.3,1] }
+  })
 };
 
-export default function SplitPunchlinesPro({ punchLines }){
+export default function SplitPunchlinesPro({ punchLines }) {
   const reduce = usePrefersReduced();
 
   const lines = punchLines ?? [
@@ -154,11 +157,11 @@ export default function SplitPunchlinesPro({ punchLines }){
               whileHover={ reduce ? {} : { scale: 1.02, rotateY: 2 }}
               style={{ originY: 0.5 }}
             >
-              <Video src={BWE} autoPlay loop muted playsInline aria-hidden />
+              <Video src={BWE} autoPlay loop muted playsInline preload="metadata" aria-hidden />
             </VideoCard>
           </Frame>
 
-          {/* RIGHT: Text with per-word infinite animation */}
+          {/* RIGHT: Text with per-word animation */}
           <TextCard>
             {lines.map((rawLine, lineIndex) => (
               <Line key={lineIndex} aria-hidden={reduce ? false : undefined}>
@@ -175,8 +178,14 @@ export default function SplitPunchlinesPro({ punchLines }){
                       aria-label={word}
                     >
                       <WordInner
-                        animate={ reduce ? undefined : { y: [0, -6, 0], scale: [1, 1.02, 1] } }
-                        transition={ reduce ? undefined : { duration: 3.6, ease: "easeInOut", repeat: Infinity, repeatType: "mirror", delay: globalIdx * 0.18 } }
+                        animate={ reduce ? undefined : { y: [0, -4, 0], scale: [1,1.02,1] } }
+                        transition={ reduce ? undefined : {
+                          duration: 2.8,
+                          ease: "easeInOut",
+                          repeat: Infinity,
+                          repeatType: "mirror",
+                          delay: globalIdx * 0.12
+                        }}
                       >
                         {word}
                       </WordInner>
