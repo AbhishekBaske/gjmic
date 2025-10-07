@@ -173,7 +173,7 @@ export default function Footbar() {
           <InfoText className="animate-content">15-16 November 2025</InfoText>
           <InfoText className="animate-content">Venue: Deshpande Auditorium, BIT Sindri, Dhanbad</InfoText>
           <DownloadButton 
-            href="https://github.com/AbhishekBaske/pdf-files/raw/f21ffad93ecc84fd38efcb61ac89a551a50a400f/GJMIC-2025%20Brochure.pdf"
+            href="https://github.com/AbhishekBaske/gjmiccdn/raw/e10001fb479850c3c2297cc6e059a68cc3a2a282/pdf/GJMIC_BROCHURE.pdf"
             target="_blank" 
             className="animate-content"
           >

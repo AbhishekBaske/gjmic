@@ -189,7 +189,7 @@ const CommitteePage = () => {
   ];
 
   const thirdRow = [
-    { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Tanmay%20Dasgupta%2C%20%20Assistant%20Professor.jpg"},
+    { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/tanmaydas.jpeg"},
     { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918877091602", email: "roshan.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/ROSHAN%20KUMAR.jpeg"},
     { name: "Prof. Aditya Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Aditya%20Pandey%2C%20Assistant%20Professor.jpg" },
   ];
@@ -203,7 +203,7 @@ const CommitteePage = () => {
 
   const studentRepresentatives = [
     { name: "Banti Kumar Saw", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917488696254", email: "hellobanti1234@gmail.com", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/banti.jpeg" },
-    { name: "Abhay Kumar", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917667030596", email: "abhaykumarr2468@gmail.com", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/abhay1.jpg" },
+    { name: "Abhay Kumar", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917667030596", email: "abhaykumarr2468@gmail.com", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/abhay2.jpeg" },
   ];
 
   const renderMemberCard = (member) => (
