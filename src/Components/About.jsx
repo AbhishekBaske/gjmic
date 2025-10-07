@@ -1,10 +1,5 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-
-// --- Asset Imports ---
-import instituteImage from "../assets/bitadmin.jpeg"; // Image for the main institute
-import departmentImage from "../assets/bitminig.jpg"; // Image for the Mining department
-
 // --- Icon Imports from react-icons ---
 import {
   FiCalendar,
@@ -399,7 +394,7 @@ export default function AboutPage() {
           </Description>
         </LeftColumn>
         <RightColumn>
-          <Image src={instituteImage} alt="BIT Sindri Administrative Building" />
+          <Image src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/bitadmin.jpeg" alt="BIT Sindri Administrative Building" />
           <ImageCaption>
             <b>BIT Sindri</b>
             <br />
@@ -429,7 +424,7 @@ export default function AboutPage() {
           </Description>
         </LeftColumn>
         <RightColumn>
-          <Image src={departmentImage} alt="BIT Sindri Mining Department Building" />
+          <Image src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/bitminig.jpg" alt="BIT Sindri Mining Department Building" />
           <ImageCaption>
             <b>Mining Engineering</b>
             <br />

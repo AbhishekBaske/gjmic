@@ -244,14 +244,14 @@ const Contact = () => {
               <IconWrapper><FiPhone /></IconWrapper>
               <span>
                 <strong>Abhay Kumar (Student Coordinator):</strong><br />
-                +91-7667030596
+                +91-7667030596 
               </span>
             </ListItem>
             <ListItem>
               <IconWrapper><FiPhone /></IconWrapper>
               <span>
-                <strong>Banti Kumar Saw (Student Coordinator):</strong><br />
-                +91-7488962544
+                <strong>Banti Kumar Saw (Student Coordinator)</strong><br />
+                +91-7488962544 
               </span>
             </ListItem>
           </List>

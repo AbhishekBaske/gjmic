@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import bunty from "../assets/logo.png";
 // Asset imports remain the same
 import bitsinfo from "../assets/bit.png";
 import logo from "../assets/logo2.png";
@@ -166,8 +166,9 @@ export default function Footbar() {
           <Title className="animate-content">GJMIC-2025</Title>
           <LogoContainer>
             {/* Add a specific class for animating only these logos */}
-            <LogoImg src={bitsinfo} alt="BIT Logo" className="animate-logo" />
-            <LogoImg src={logo} alt="Conference Logo" className="animate-logo" />
+            <LogoImg src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/bit.png" alt="BIT Logo" className="animate-logo" />
+            <LogoImg src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/logo2.png" alt="Conference Logo" className="animate-logo" />
+            <LogoImg src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/Logo%20wt%20white%20text-012.png" alt="Conference Logo" className="animate-logo" />
           </LogoContainer>
           <InfoText className="animate-content">Golden Jubilee Mining Innovation Conclave</InfoText>
           <InfoText className="animate-content">15-16 November 2025</InfoText>

@@ -4,8 +4,6 @@ import styled, { keyframes } from "styled-components";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
-import bitsindri from "../assets/bit.png";
-import logo2 from "../assets/logo2.png";
 
 // ---------- Golden Sweep Animation ----------
 const goldSweep = keyframes`
@@ -222,8 +220,8 @@ const Home = () => {
   return (
     <HomeWrapper ref={wrapperRef}>
       <Logos>
-        <LogoImage src={bitsindri} alt="Bits Indri Logo" ref={leftLogoRef} />
-        <LogoImage src={logo2} alt="GJMIC Logo" ref={rightLogoRef} />
+        <LogoImage src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/bit.png" alt="Bits Indri Logo" ref={leftLogoRef} />
+        <LogoImage src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/logo2.png" alt="GJMIC Logo" ref={rightLogoRef} />
       </Logos>
 
       <EventDetails>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../assets/logo.png";
+
 
 // --- Styled Components ---
 const SiteHeader = styled.header`
@@ -16,12 +16,12 @@ const SiteHeader = styled.header`
 `;
 
 const NavInner = styled.div`
-  max-width: 1280px;
+  max-width:100vw;
   margin: 0 auto;
   padding: 8px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
   gap: 12px;
   min-height: 72px;
 `;
@@ -32,7 +32,7 @@ const Brand = styled(Link)`
 `;
 
 const BrandLogo = styled.img`
-  height: 72px; /* increased size */
+  height: 80px; /* increased size */
   width: auto;
 
   @media (max-width: 768px) {
@@ -43,20 +43,18 @@ const BrandLogo = styled.img`
 const MainNavigation = styled.nav`
   flex: 1 1 auto;
   display: flex;
-  justify-content: center;
-
+  justify-content: space-evenly;
   @media (max-width: 900px) {
     display: none;
   }
 `;
 
 const Menu = styled.ul`
-  display: flex;
-  gap: 22px;
-  align-items: center;
+  display:flex;
+  justify-content:space-evenly;
   margin: 0;
   padding: 0;
-
+  gap:18px;
   @media (max-width: 768px) {
     gap: 12px;
   }
@@ -125,23 +123,56 @@ const ButtonGold = styled(Link)`
 
 const Hamburger = styled.button`
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  cursor: pointer;
+  position: relative;
+  width: 34px;
+  height: 28px;
+  padding: 0;
   background: none;
   border: none;
-  z-index: 110;
+  cursor: pointer;
+  z-index: 120;
 
   @media (max-width: 900px) {
-    display: flex;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  /* three bars */
   span {
-    width: 25px;
+    position: absolute;
+    left: 6px;
+    right: 6px;
     height: 3px;
     background: #111827;
     border-radius: 3px;
+    display: block;
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1), opacity 180ms ease, top 220ms cubic-bezier(.2,.9,.2,1);
+    will-change: transform, opacity;
+  }
+
+  span:nth-child(1) {
+    top: 6px;
+  }
+  span:nth-child(2) {
+    top: 12px;
+  }
+  span:nth-child(3) {
+    top: 18px;
+  }
+
+  /* open state - morph to X */
+  &[data-open="true"] span:nth-child(1) {
+    top: 12px;
+    transform: rotate(45deg);
+  }
+  &[data-open="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  &[data-open="true"] span:nth-child(3) {
+    top: 12px;
+    transform: rotate(-45deg);
   }
 `;
 
@@ -185,6 +216,8 @@ const MobileCta = styled.div`
 // --- Component ---
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+ const menuRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   const navItems = [
     { to: "/", label: "Home", end: true },
@@ -200,15 +233,41 @@ const Navbar = () => {
     { to: "/contact", label: "Contact" },
   ];
 
-  const toggleMenu = () => setOpen(!open);
+const toggleMenu = (e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    setOpen((prev) => !prev);
+  };
   const closeMenu = () => setOpen(false);
+
+  // Add a global click listener that closes the mobile menu when it's open.
+  // This will set open = false when the user clicks anywhere.
+  useEffect(() => {
+    function handleWindowClick(e) {
+      // only act on small viewports (mobile)
+      if (!open) return;
+      if (window.innerWidth > 900) return;
+
+      // If you want to ignore clicks inside the menu or hamburger, uncomment checks below:
+      // if (menuRef.current && menuRef.current.contains(e.target)) return;
+      // if (hamburgerRef.current && hamburgerRef.current.contains(e.target)) return;
+
+      setOpen(false);
+    }
+
+    window.addEventListener("click", handleWindowClick, { passive: true });
+    return () => window.removeEventListener("click", handleWindowClick);
+  }, [open]);
+
+
+  // const toggleMenu = () => setOpen(!open);
+  // const closeMenu = () => setOpen(false);
 
   return (
     <SiteHeader>
       <NavInner>
         {/* Logo */}
         <Brand to="/">
-          <BrandLogo src={logo} alt="GJMIC Logo" />
+          <BrandLogo src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/logos/logo%20final%20wth%20bg%20ill-01-minyf.png" alt="GJMIC Logo" />
         </Brand>
 
         {/* Desktop Menu */}
@@ -230,11 +289,11 @@ const Navbar = () => {
         </Cta>
 
         {/* Hamburger */}
-        <Hamburger onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </Hamburger>
+       <Hamburger onClick={toggleMenu} aria-label={open ? "Close menu" : "Open menu"} data-open={open}>
+  <span />
+  <span />
+  <span />
+</Hamburger>
       </NavInner>
 
       {/* Mobile Drawer */}

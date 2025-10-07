@@ -185,30 +185,30 @@ const CommitteePage = () => {
 
   const secondRow = [
     { name: "Prof. Pankaj Rai", role: "Patron", dept: "Director, BIT-Sindri, Dhanbad -828123" },
-    { name: "Prof. P K Singh", role: "Chairman & Convener", dept: "Head of the department\nMining Engineering and Geology Department\nBIT-Sindri, Dhanbad -828123", phone: "+919123295611", email: "hod.mining@bitsindri.ac.in" },
+    { name: "Prof. P K Singh", role: "Chairman & Convener", dept: "Head of the department\nMining Engineering and Geology Department\nBIT-Sindri, Dhanbad -828123", phone: "+919123295611", email: "hod.mining@bitsindri.ac.in" ,},
   ];
 
   const thirdRow = [
-    { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" },
-    { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918877091602", email: "roshan.min@bitsindri.ac.in" },
-    { name: "Prof. Aditya Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in" },
+    { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Tanmay%20Dasgupta%2C%20%20Assistant%20Professor.jpg"},
+    { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918877091602", email: "roshan.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Roshan%20Kumar%2C%20Assistant%20Professor.jpg"},
+    { name: "Prof. Aditya Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Aditya%20Pandey%2C%20Assistant%20Professor.jpg" },
   ];
 
   const coreCommitteeMembers = [
-    { name: "Prof. Suman Hessa", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919546635375", email: "sumanhessa@gmail.com" },
-    { name: "Prof. Manas Kumar Mallick", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918555916172", email: "mallick.manas2@gmail.com" },
-    { name: "Prof. Rizwan Hasim", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918580370454", email: "riz.itbhu@gmail.com" },
-    { name: "Prof. Neeraj Yadaw", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919907996623", email: "neerajyadaw@gmail.com" },
+    { name: "Prof. Suman Hessa", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919546635375", email: "sumanhessa@gmail.com" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Suman%20Hessa%2C%20Assistant%20Professor.jpg"},
+    { name: "Prof. Manas Kumar Mallick", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918555916172", email: "mallick.manas2@gmail.com" , image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Dr.%20Manas%20Kumar%20Mallick.jpg"},
+    { name: "Prof. Rizwan Hasim", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918580370454", email: "riz.itbhu@gmail.com" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Dr.%20Rizwan%20Hasim%2C%20Assistant%20Professor_.jpg"},
+    { name: "Prof. Neeraj Yadaw", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919907996623", email: "neerajyadaw@gmail.com" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Neeraj%20Yadaw%2C%20Assistant%20Professor.jpg"},
   ];
 
   const studentRepresentatives = [
-    { name: "Banti Kumar Saw", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917488696254", email: "hellobanti1234@gmail.com" },
-    { name: "Abhay Kumar", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917667030596", email: "abhaykumarr2468@gmail.com" },
+    { name: "Banti Kumar Saw", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917488696254", email: "hellobanti1234@gmail.com", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/banti.jpeg" },
+    { name: "Abhay Kumar", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+917667030596", email: "abhaykumarr2468@gmail.com", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/abhay1.jpg" },
   ];
 
   const renderMemberCard = (member) => (
     <div className="member-card" key={member.name}>
-      <img src={placeholderImg} alt="Member" className="member-image" />
+      <img src={member.image || placeholderImg} alt="Member" className="member-image" />
       <p className="member-name">{member.name}</p>
       {member.role && <p className="member-role">{member.role}</p>}
       {member.dept && <p className="member-department">{member.dept}</p>}
