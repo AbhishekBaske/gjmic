@@ -185,12 +185,12 @@ const CommitteePage = () => {
 
   const secondRow = [
     { name: "Prof. Pankaj Rai", role: "Patron", dept: "Director, BIT-Sindri, Dhanbad -828123" },
-    { name: "Prof. P K Singh", role: "Chairman & Convener", dept: "Head of the department\nMining Engineering and Geology Department\nBIT-Sindri, Dhanbad -828123", phone: "+919123295611", email: "hod.mining@bitsindri.ac.in", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/pk_singh.jpeg" ,},
+    { name: "Prof. P K Singh", role: "Chairman & Convener", dept: "Head of the department\nMining Engineering and Geology Department\nBIT-Sindri, Dhanbad -828123", phone: "+91 91232 99611", email: "hod.mining@bitsindri.ac.in", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/pk_singh.jpeg" ,},
   ];
 
   const thirdRow = [
-    { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918840144886", email: "tanmaydas.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/tanmaydas.jpeg"},
-    { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+918877091602", email: "roshan.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/ROSHAN%20KUMAR.jpeg"},
+    { name: "Prof. Tanmay Dasgupta", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+91 88401 44886", email: "tanmaydas.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/tanmaydas.jpeg"},
+    { name: "Prof. Roshan Kumar", role: "Co-Convener", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+91 88770 91602", email: "roshan.min@bitsindri.ac.in" ,image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/ROSHAN%20KUMAR.jpeg"},
     { name: "Prof. Aditya Pandey", role: "Secretary and Treasurer", dept: "Department of Mining Engineering\nBIT-Sindri, Dhanbad -828123", phone: "+919614919301", email: "adityapandey.min@bitsindri.ac.in", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Mr.%20Aditya%20Pandey%2C%20Assistant%20Professor.jpg" },
   ];
 
