@@ -184,7 +184,7 @@ const CommitteePage = () => {
   ];
 
   const secondRow = [
-    { name: "Prof. Pankaj Rai", role: "Patron", dept: "Director, BIT-Sindri, Dhanbad -828123" },
+    { name: "Prof. Pankaj Rai", role: "Patron", dept: "Director, BIT-Sindri, Dhanbad -828123" , image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn/direct.jpg"},
     { name: "Prof. P K Singh", role: "Chairman & Convener", dept: "Head of the department\nMining Engineering and Geology Department\nBIT-Sindri, Dhanbad -828123", phone: "+91 91232 99611", email: "hod.mining@bitsindri.ac.in", image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/pk_singh.jpeg" ,},
   ];
 
