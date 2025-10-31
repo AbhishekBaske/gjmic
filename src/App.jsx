@@ -15,6 +15,7 @@ import styled from "styled-components";
 import Register from "./Components/Register.jsx";
 import Sponsorship from "./Components/Sponsership.jsx";
 import ToBeUpdated from "./Components/ToBeUpdated.jsx";
+import Speaker from "./Components/Speaker.jsx";
 
 // Styled components
 const AppContainer = styled.div`
@@ -51,7 +52,7 @@ export default function App() {
           <Route path="/call-for-papers" element={<CallForPapers />} />
           <Route path="/important-dates" element={<ImportantDates />} />
           <Route path="/committee" element={<Committee />} />
-          <Route path="/speakers" element={<Announce />} />
+          <Route path="/speakers" element={<Speaker />} />
           <Route path="/gallery" element={<ToBeUpdated />} />
           <Route path="/sponsorship-tiers" element={<Sponsorship />} />
           <Route path="/register" element={<Register />} />
