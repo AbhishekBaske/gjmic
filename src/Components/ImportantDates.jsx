@@ -236,10 +236,10 @@ const DeadlineDate = styled.span`
 
 // --- Data ---
 const timelineData = [
-  { icon: <Info size={22} />, title: "Call for abstracts", tag: { text: "Upcoming", color: "#111", bgColor: goldColor }, date: "01.10.2025" },
-  { icon: <CheckCircle size={22} />, title: "Notification of acceptance of abstracts", tag: { text: "Review Decision", color: "#fff", bgColor: "#50e3c2" }, date: "15.10.2025" },
-  { icon: <FileText size={22} />, title: "Full paper submission", tag: { text: "Submission Open", color: "#fff", bgColor: "#4a90e2" }, date: "31.10.2025" },
-  { icon: <Award size={22} />, title: "Intimation of acceptance of full paper submission", tag: { text: "Final Decision", color: "#fff", bgColor: "#50e3c2" }, date: "05.11.2025" },
+  { icon: <Info size={22} />, title: "Call for abstracts", tag: { text: "Upcoming", color: "#111", bgColor: goldColor }, date: "05.11.2025" },
+  { icon: <CheckCircle size={22} />, title: "Notification of acceptance of abstracts", tag: { text: "Review Decision", color: "#fff", bgColor: "#50e3c2" }, date: "10.11.2025" },
+  { icon: <FileText size={22} />, title: "Full paper submission", tag: { text: "Submission Open", color: "#fff", bgColor: "#4a90e2" }, date: "14.11.2025" },
+  { icon: <Award size={22} />, title: "Intimation of acceptance of full paper submission", tag: { text: "Final Decision", color: "#fff", bgColor: "#50e3c2" }, date: "14.11.2025" },
 ];
 
 // --- Component ---

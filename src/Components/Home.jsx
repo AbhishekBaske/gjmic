@@ -238,17 +238,14 @@ const Home = () => {
 
       <RegistrationDetails>
         <ButtonGold 
-          as="a"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeNO3Ioi6qHNL7MUISBuxszpJO_yrhislwGD4gU_N1_YoLTdg/viewform" 
-          target="_blank"
-          rel="noopener noreferrer"
+          to="/register"
           ref={(el) => (buttonsRef.current[0] = el)}
         >
           Register
         </ButtonGold>
         <ButtonOutline 
           as="a"
-          href="https://github.com/AbhishekBaske/gjmiccdn/raw/e10001fb479850c3c2297cc6e059a68cc3a2a282/pdf/GJMIC_BROCHURE.pdf" 
+          href="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/pdf/BROCHURE_GJMIC.pdf" 
           target="_blank"
           rel="noopener noreferrer"
           ref={(el) => (buttonsRef.current[1] = el)}

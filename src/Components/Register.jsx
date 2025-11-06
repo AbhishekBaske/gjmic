@@ -142,10 +142,6 @@ const HeaderCell = styled.th`
     padding-right: 25px;
     text-align: center;
   }
-
-  &:nth-child(2) {
-    text-align: center;
-  }
 `;
 
 const TableBody = styled.tbody`
@@ -179,7 +175,7 @@ const BodyCell = styled.td`
     gap: 10px;
   }
 
-  &:nth-child(2), &:last-child {
+  &:last-child {
     text-align: center;
     font-weight: 600;
     color: ${goldColor};
@@ -278,22 +274,19 @@ const Register = () => {
       category: "Corporate And Industrial Bodies",
       icon: <Building2 size={18} />,
       iconClass: "corporate",
-      earlyBird: "6000",
-      regular: "8000"
+      fee: "6000"
     },
     {
       category: "Academicians And Researchers", 
       icon: <GraduationCap size={18} />,
       iconClass: "academic",
-      earlyBird: "5000",
-      regular: "7000"
+      fee: "5000"
     },
     {
       category: "Students / Research Scholars",
       icon: <Users size={18} />,
       iconClass: "student", 
-      earlyBird: "2500",
-      regular: "3500"
+      fee: "2500"
     }
   ];
 
@@ -321,12 +314,7 @@ const Register = () => {
                 <tr>
                   <HeaderCell>Participation Category</HeaderCell>
                   <HeaderCell>
-                    Early Bird Fee<br />
-                    Up To 07.10.2025 (INR)
-                  </HeaderCell>
-                  <HeaderCell>
-                    Regular Fee<br />
-                    After 07.10.2025 (INR)
+                    Registration Fee (INR)
                   </HeaderCell>
                 </tr>
               </TableHeader>
@@ -339,8 +327,7 @@ const Register = () => {
                       </ParticipantIcon>
                       {item.category}
                     </BodyCell>
-                    <BodyCell>₹{item.earlyBird}</BodyCell>
-                    <BodyCell>₹{item.regular}</BodyCell>
+                    <BodyCell>₹{item.fee}</BodyCell>
                   </tr>
                 ))}
               </TableBody>
@@ -352,7 +339,6 @@ const Register = () => {
               <Calendar size={20} />
               Registration Guidelines
             </InfoTitle>
-            <InfoText>• Early bird registration closes on <strong>October 7th, 2025</strong></InfoText>
             <InfoText>• Payments must be made in Indian Rupees (INR)</InfoText>
             <InfoText>• Student registration requires valid institutional ID</InfoText>
             <InfoText>• Corporate registrations include networking sessions & materials</InfoText>

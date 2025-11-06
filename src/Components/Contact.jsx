@@ -251,7 +251,7 @@ const Contact = () => {
               <IconWrapper><FiPhone /></IconWrapper>
               <span>
                 <strong>Banti Kumar Saw (Student Coordinator)</strong><br />
-                +91-7488962544 
+                +91-7488696254
               </span>
             </ListItem>
           </List>
