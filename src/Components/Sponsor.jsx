@@ -1,13 +1,26 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+// Golden shimmer animation for golden jubilee effect
+const goldenShimmer = keyframes`
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+`;
 
 const Container = styled.div`
-  max-width: 1400px;
   margin: 0 auto;
   padding: 3rem 2rem;
   font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f8fafc;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f5f5f5 25%,
+    #121212 75%,
+    #000000 100%
+  );
+  background-size: 100% 200%;
   min-height: 100vh;
   position: relative;
+  width: 100%;
   
   &::before {
     content: '';
@@ -26,6 +39,12 @@ const Container = styled.div`
   @media (max-width: 480px) {
     padding: 1.5rem 0.75rem;
   }
+`;
+
+const ContentWrapper = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 `;
 
 const Header = styled.div`
@@ -48,10 +67,25 @@ const Header = styled.div`
 const MainTitle = styled.h1`
   font-size: 3.5rem;
   font-weight: 800;
-  color: #1e293b;
+  background: linear-gradient(
+    45deg, 
+    #B8860B, 
+    #FFD700, 
+    #FFA500, 
+    #FF8C00, 
+    #DAA520,
+    #FFD700,
+    #B8860B
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ${goldenShimmer} 4s ease-in-out infinite;
   margin-bottom: 1rem;
   letter-spacing: -0.025em;
   line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(218, 165, 32, 0.3);
   
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -335,214 +369,246 @@ const CardTierBadge = styled.div`
 export default function Sponsor() {
     return(
         <Container>
-            <Header>
-                <MainTitle>GJMIC-2025 Sponsors</MainTitle>
-                <Subtitle>
-                    We gratefully acknowledge the generous support of our sponsors who make this conclave possible
-                </Subtitle>
-            </Header>
-            
-            <SponsorList>
-                <SponsorCard>
-                    <CardTierBadge tier="silver">Silver sponsor</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://www.nclcil.in" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage 
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/NCL%20LOGO.jpg" 
-                            alt="NCL Logo" 
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>Northern Coalfields Limited</SponsorName>
-                    <SponsorDescription>
-                        Established in 1985, NCL is a wholly owned subsidiary of Coal India Limited, operating mechanized opencast coal mines in Singrauli coalfield.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://www.nclcil.in" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
+            <ContentWrapper>
+                <Header>
+                    <MainTitle>GJMIC-2025 Sponsors</MainTitle>
+                    <Subtitle>
+                        We gratefully acknowledge the generous support of our sponsors who make this conclave possible
+                    </Subtitle>
+                </Header>
                 
-                <SponsorCard>
-                    <CardTierBadge tier="silver">Silver sponsor</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://www.jindalpower.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage 
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/jindalpower.jpg"
-                            alt="Jindal Power Limited Logo"
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>Jindal Power Limited</SponsorName>
-                    <SponsorDescription>
-                        Jindal Power Limited is a leading independent power producer in India, part of the OP Jindal Group operating thermal power plants.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://www.jindalpower.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
-                
-                <SponsorCard>
-                    <CardTierBadge tier="silver">Silver sponsor</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://www.centralcoalfields.in/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage 
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/CCL%20Logo%202024.jpg"
-                            alt="CCL Logo"
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>Central Coalfields Limited</SponsorName>
-                    <SponsorDescription>
-                        Established in 1975, CCL is a subsidiary of Coal India Limited operating 43 mines across coalfields for thermal power generation.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://www.centralcoalfields.in/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
-                
-                <SponsorCard>
-                    <CardTierBadge tier="bronze">Bronze sponsor</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://www.nlcindia.in" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage 
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/NLCIL%20Logo%20CMYK_.png" 
-                            alt="NLC India Limited Logo" 
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>NLC India Limited</SponsorName>
-                    <SponsorDescription>
-                        Incorporated in 1956, NLC India produces lignite from opencast mines and operates thermal power stations with renewable energy installations.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://www.nlcindia.in" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
-                
-                <SponsorCard>
-                    <CardTierBadge tier="bronze">Bronze sponsor</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://westerncoal.in/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@latest/WCL_to_organize_two_day_seminar_on_Coal_Mine_Safety_in_India.jpg"
-                            alt="Western Coalfields Limited Logo"
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>Western Coalfields Limited</SponsorName>
-                    <SponsorDescription>
-                        Established in 1975, WCL is a subsidiary of Coal India Limited operating coal mines across Maharashtra and Madhya Pradesh.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://westerncoal.in/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
-                
-                <SponsorCard>
-                    <CardTierBadge tier="other">Others</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://sharprojects.in/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage 
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Logo%20SHAR.jpg" 
-                            alt="SHAR Projects Logo" 
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>SHAR Projects Private Limited</SponsorName>
-                    <SponsorDescription>
-                        Founded in 2023 and headquartered in Hyderabad, SHAR Projects specializes in mining, construction, road development, and railway infrastructure.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://sharprojects.in/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
-                
-                <SponsorCard>
-                    <CardTierBadge tier="other">Others</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://www.hindalco.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage 
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Hindalco_3D_logo_Aw%20(1).webp" 
-                            alt="Hindalco Industries Logo" 
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>Hindalco Industries Limited</SponsorName>
-                    <SponsorDescription>
-                        Established in 1958, Hindalco is a subsidiary of the Aditya Birla Group and leading Indian aluminium and copper manufacturing company.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://www.hindalco.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
-                
-                <SponsorCard>
-                    <CardTierBadge tier="other">Others</CardTierBadge>
-                    <SponsorImageLink 
-                        href="https://www.mahanadicoal.in" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        <SponsorImage 
-                            src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/MCL_English.jpg" 
-                            alt="Mahanadi Coalfields Limited Logo" 
-                        />
-                    </SponsorImageLink>
-                    <SponsorName>Mahanadi Coalfields Limited</SponsorName>
-                    <SponsorDescription>
-                        Established in 1992, MCL is a subsidiary of Coal India Limited operating coal mines across Odisha with largest coal production.
-                    </SponsorDescription>
-                    <VisitWebsiteButton 
-                        href="https://www.mahanadicoal.in" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Visit Website
-                    </VisitWebsiteButton>
-                </SponsorCard>
-            </SponsorList>
+                {/* Silver Sponsors Row */}
+                <SponsorTierSection>
+                    <TierTitle>
+                        <TierBadge tier="silver">Silver Sponsors</TierBadge>
+                    </TierTitle>
+                    <SponsorList>
+                        <SponsorCard>
+                            <CardTierBadge tier="silver">Silver sponsor</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://www.nclcil.in" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/NCL%20LOGO.jpg" 
+                                    alt="NCL Logo" 
+                                    tier="silver"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Northern Coalfields Limited</SponsorName>
+                            <SponsorDescription>
+                                Established in 1985, NCL is a wholly owned subsidiary of Coal India Limited, operating mechanized opencast coal mines in Singrauli coalfield.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://www.nclcil.in" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                        
+                        <SponsorCard>
+                            <CardTierBadge tier="silver">Silver sponsor</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://www.jindalpower.com" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/jindalpower.jpg"
+                                    alt="Jindal Power Limited Logo"
+                                    tier="silver"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Jindal Power Limited</SponsorName>
+                            <SponsorDescription>
+                                Jindal Power Limited is a leading independent power producer in India, part of the OP Jindal Group operating thermal power plants.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://www.jindalpower.com" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                        
+                        <SponsorCard>
+                            <CardTierBadge tier="silver">Silver sponsor</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://www.centralcoalfields.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/CCL%20Logo%202024.jpg"
+                                    alt="CCL Logo"
+                                    tier="silver"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Central Coalfields Limited</SponsorName>
+                            <SponsorDescription>
+                                Established in 1975, CCL is a subsidiary of Coal India Limited operating 43 mines across coalfields for thermal power generation.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://www.centralcoalfields.in/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                    </SponsorList>
+                </SponsorTierSection>
+
+                {/* Bronze Sponsors Row */}
+                <SponsorTierSection>
+                    <TierTitle>
+                        <TierBadge tier="bronze">Bronze Sponsors</TierBadge>
+                    </TierTitle>
+                    <SponsorList>
+                        <SponsorCard>
+                            <CardTierBadge tier="bronze">Bronze sponsor</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://www.nlcindia.in" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/NLCIL%20Logo%20CMYK_.png" 
+                                    alt="NLC India Limited Logo" 
+                                    tier="bronze"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>NLC India Limited</SponsorName>
+                            <SponsorDescription>
+                                Incorporated in 1956, NLC India produces lignite from opencast mines and operates thermal power stations with renewable energy installations.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://www.nlcindia.in" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                        
+                        <SponsorCard>
+                            <CardTierBadge tier="bronze">Bronze sponsor</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://westerncoal.in/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/WCL_to_organize_two_day_seminar_on_Coal_Mine_Safety_in_India.jpg"
+                                    alt="Western Coalfields Limited Logo"
+                                    tier="bronze"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Western Coalfields Limited</SponsorName>
+                            <SponsorDescription>
+                                Established in 1975, WCL is a subsidiary of Coal India Limited operating coal mines across Maharashtra and Madhya Pradesh.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://westerncoal.in/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                    </SponsorList>
+                </SponsorTierSection>
+
+                {/* Other Sponsors Row */}
+                <SponsorTierSection>
+                    <TierTitle>
+                        <TierBadge tier="other">Other Sponsors</TierBadge>
+                    </TierTitle>
+                    <SponsorList>
+                        <SponsorCard>
+                            <CardTierBadge tier="other">Others</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://sharprojects.in/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Logo%20SHAR.jpg" 
+                                    alt="SHAR Projects Logo" 
+                                    tier="other"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>SHAR Projects Private Limited</SponsorName>
+                            <SponsorDescription>
+                                Founded in 2023 and headquartered in Hyderabad, SHAR Projects specializes in mining, construction, road development, and railway infrastructure.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://sharprojects.in/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                        
+                        <SponsorCard>
+                            <CardTierBadge tier="other">Others</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://www.hindalco.com" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Hindalco_3D_logo_Aw%20(1).webp" 
+                                    alt="Hindalco Industries Logo" 
+                                    tier="other"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Hindalco Industries Limited</SponsorName>
+                            <SponsorDescription>
+                                Established in 1958, Hindalco is a subsidiary of the Aditya Birla Group and leading Indian aluminium and copper manufacturing company.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://www.hindalco.com" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                        
+                        <SponsorCard>
+                            <CardTierBadge tier="other">Others</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://www.mahanadicoal.in" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/MCL_English.jpg" 
+                                    alt="Mahanadi Coalfields Limited Logo" 
+                                    tier="other"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Mahanadi Coalfields Limited</SponsorName>
+                            <SponsorDescription>
+                                Established in 1992, MCL is a subsidiary of Coal India Limited operating coal mines across Odisha with largest coal production.
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://www.mahanadicoal.in" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                    </SponsorList>
+                </SponsorTierSection>
+            </ContentWrapper>
         </Container>
     )
 }
