@@ -440,6 +440,13 @@ const sponsors = [
     url: 'https://sharprojects.in/'
   },
   {
+    tier:"other",
+    name:"Eastern Coalfields Limited",
+    logo:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/ecllogo.jpg",
+    url:"https://www.easterncoal.nic.in/"
+
+  },
+  {
     tier: 'other',
     name: 'Hindalco Industries Limited',
     logo: 'https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Hindalco_3D_logo_Aw%20(1).webp',

@@ -554,7 +554,31 @@ export default function Sponsor() {
                                 Visit Website
                             </VisitWebsiteButton>
                         </SponsorCard>
-                        
+                        <SponsorCard>
+                            <CardTierBadge tier="other">Others</CardTierBadge>
+                            <SponsorImageLink
+                                href="https://www.easterncoal.nic.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/ecllogo.jpg"
+                                    alt="Eastern Coalfields Limited Logo"
+                                    tier="other"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Eastern Coalfields Limited</SponsorName>
+                            <SponsorDescription>
+                                Established in 1975, ECL is a subsidiary of Coal India Limited operating coal mines across West Bengal.
+                            </SponsorDescription>
+                            <VisitWebsiteButton
+                                href="https://www.easterncoal.nic.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
                         <SponsorCard>
                             <CardTierBadge tier="other">Others</CardTierBadge>
                             <SponsorImageLink 
