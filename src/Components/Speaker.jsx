@@ -367,6 +367,95 @@ export default function Speaker() {
                     </LeftSection>
                 </CardContent>
             </SpeakerCard>
+
+            <SpeakerCard className="speaker-card" style={{ marginTop: '40px' }}>
+                <CardHeader>
+                    <SeriesTitle>
+                        Damodar Valley Memorial Lecture Series
+                    </SeriesTitle>
+                </CardHeader>
+                <CardContent>
+                    <RightSection className="right-section">
+                        <TopicSection className="topic-section">
+                            <SectionHeading>Lecture Topic</SectionHeading>
+                            <TopicText>
+                                "Researches on Uranium Mining: Saviour of Defence of the Country"
+                            </TopicText>
+                        </TopicSection>
+
+                        <FocusSection className="focus-section">
+                            <FocusLabel>Focus:</FocusLabel>
+                            <FocusText>
+                                Established researcher and consultant with 38+ years in subsurface mine ventilation 
+                                and air-conditioning. Former Director of IIT(ISM) Dhanbad, Principal Investigator 
+                                of 14 major research projects, and executed 445+ industry-sponsored projects. 
+                                Internationally recognized expert who chaired technical sessions at multiple 
+                                International Mine Ventilation Congresses and was instrumental in hosting the 
+                                9th IMVC in Asia for the first time.
+                            </FocusText>
+                        </FocusSection>
+                    </RightSection>
+                    
+                    <LeftSection className="left-section">
+                        <ImageSection>
+                            <SpeakerImage 
+                                src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Photograph%20of%20DCP.png
+" 
+                                alt="Prof. D. C. Panigrahi"
+                            />
+                        </ImageSection>
+                        
+                        <SpeakerInfo>
+                            <SpeakerName>Prof. D. C. Panigrahi, FNAE</SpeakerName>
+                            <Designation>Managing Director, PMRC Private Limited</Designation>
+                            <Institution>& Formerly Director, IIT (ISM) Dhanbad</Institution>
+                        </SpeakerInfo>
+                    </LeftSection>
+                </CardContent>
+            </SpeakerCard>
+
+            <SpeakerCard className="speaker-card" style={{ marginTop: '40px' }}>
+                <CardHeader>
+                    <SeriesTitle>
+                        Damodar Valley Memorial Lecture Series
+                    </SeriesTitle>
+                </CardHeader>
+                <CardContent>
+                    <RightSection className="right-section">
+                        <TopicSection className="topic-section">
+                            <SectionHeading>Lecture Topic</SectionHeading>
+                            <TopicText>
+                                "Utilization of Overburden sandstone as Sand - A Game Changer for the Coal Mining Industry"
+                            </TopicText>
+                        </TopicSection>
+
+                        <FocusSection className="focus-section">
+                            <FocusLabel>Focus:</FocusLabel>
+                            <FocusText>
+                                Experienced Academician, Researcher and a Consultant with a demonstrated history of 
+                                working in the higher education in the area of Mining Engineering with specialization 
+                                in Rock Mechanics and Ground Control.
+                            </FocusText>
+                        </FocusSection>
+                    </RightSection>
+                    
+                    <LeftSection className="left-section">
+                        <ImageSection>
+                            <SpeakerImage 
+                                src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/WhatsApp%20Image%202025-11-13%20at%2000.53.47%20(1).jpeg
+" 
+                                alt="Prof. Abhiram Kumar Verma"
+                            />
+                        </ImageSection>
+                        
+                        <SpeakerInfo>
+                            <SpeakerName>Prof. Abhiram Kumar Verma</SpeakerName>
+                            <Designation>Professor, Department of Mining Engineering</Designation>
+                            <Institution>IIT Kharagpur</Institution>
+                        </SpeakerInfo>
+                    </LeftSection>
+                </CardContent>
+            </SpeakerCard>
         </SpeakerContainer>
     );
 }
