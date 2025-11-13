@@ -180,7 +180,7 @@ const CommitteePage = () => {
   }, []);
 
   const organisingCommittee = [
-    { name: "Shri Rahul Kumar Purwar, IAS", role: "Chief Patron", dept: "Principal Secretary\n (Department of Higher and Technical Education)\nGovernment of Jharkhand" },
+    { name: "Shri Rahul Kumar Purwar, IAS", role: "Chief Patron", dept: "Principal Secretary\n (Department of Higher and Technical Education)\nGovernment of Jharkhand" , image:"https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/WhatsApp%20Image%202025-11-13%20at%2009.18.41.jpeg",}
   ];
 
   const secondRow = [
