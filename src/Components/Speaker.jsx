@@ -399,8 +399,7 @@ export default function Speaker() {
                     <LeftSection className="left-section">
                         <ImageSection>
                             <SpeakerImage 
-                                src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Photograph%20of%20DCP.png
-" 
+                                src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Photograph%20of%20DCP.png" 
                                 alt="Prof. D. C. Panigrahi"
                             />
                         </ImageSection>

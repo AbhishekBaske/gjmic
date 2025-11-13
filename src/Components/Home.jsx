@@ -80,6 +80,7 @@ const CarouselLogoCard = styled.div`
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 2px solid ${props => 
+    props.tier === 'gold' ? '#d4af37' :
     props.tier === 'silver' ? '#c0c0c0' : 
     props.tier === 'bronze' ? '#cd7f32' : 
     '#4ade80'};
@@ -400,6 +401,12 @@ const IconWrapper = styled.div`
 const sponsors = [
   // Silver Sponsors
   {
+    tier: 'gold',
+    name: 'Bharat Coking Coal Limited',
+    logo: 'https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Bharat%20Coking%20Coal.webp',
+    url: 'https://www.bcclweb.in/'
+  },
+  {
     tier: 'silver',
     name: 'Northern Coalfields Limited',
     logo: 'https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/NCL%20LOGO.jpg',
@@ -430,6 +437,12 @@ const sponsors = [
     name: 'Western Coalfields Limited',
     logo: 'https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/WCL_to_organize_two_day_seminar_on_Coal_Mine_Safety_in_India.jpg',
     url: 'https://westerncoal.in/'
+  },
+  {
+    tier: 'bronze',
+    name: 'Damodar valley corporation',
+    logo: 'https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/image.webp',
+    url: 'https://www.dvc.gov.in/'
   },
   
   // Other Sponsors
@@ -650,6 +663,7 @@ const SponsorSection = () => {
   }, []);
 
   // Organize sponsors by tier
+  const goldSponsors = sponsors.filter(sponsor => sponsor.tier === 'gold');
   const silverSponsors = sponsors.filter(sponsor => sponsor.tier === 'silver');
   const bronzeSponsors = sponsors.filter(sponsor => sponsor.tier === 'bronze');
   const otherSponsors = sponsors.filter(sponsor => sponsor.tier === 'other');
@@ -658,9 +672,34 @@ const SponsorSection = () => {
     <SponsorContainer>
       <SponsorTitle ref={sponsorTitleRef}>Our Sponsors</SponsorTitle>
       
+      {/* Gold Row */}
+      {goldSponsors.length > 0 && (
+        <SponsorRow className="gold-row" ref={(el) => (sponsorRowsRef.current[0] = el)}>
+          {goldSponsors.map((sponsor, index) => (
+            <SponsorCard 
+              key={`gold-${index}`} 
+              tier={sponsor.tier}
+              ref={(el) => (sponsorCardsRef.current[index] = el)}
+            >
+              <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
+                <SponsorLogo 
+                  src={sponsor.logo} 
+                  alt={sponsor.name}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+                <SponsorName>{sponsor.name}</SponsorName>
+                <TierBadge tier={sponsor.tier}>Gold</TierBadge>
+              </a>
+            </SponsorCard>
+          ))}
+        </SponsorRow>
+      )}
+      
       {/* Silver Row */}
       {silverSponsors.length > 0 && (
-        <SponsorRow ref={(el) => (sponsorRowsRef.current[0] = el)}>
+        <SponsorRow ref={(el) => (sponsorRowsRef.current[1] = el)}>
           {silverSponsors.map((sponsor, index) => (
             <SponsorCard 
               key={`silver-${index}`} 
@@ -685,12 +724,12 @@ const SponsorSection = () => {
       
       {/* Bronze Row */}
       {bronzeSponsors.length > 0 && (
-        <SponsorRow className="bronze-row" ref={(el) => (sponsorRowsRef.current[1] = el)}>
+        <SponsorRow className="bronze-row" ref={(el) => (sponsorRowsRef.current[2] = el)}>
           {bronzeSponsors.map((sponsor, index) => (
             <SponsorCard 
               key={`bronze-${index}`} 
               tier={sponsor.tier}
-              ref={(el) => (sponsorCardsRef.current[silverSponsors.length + index] = el)}
+              ref={(el) => (sponsorCardsRef.current[goldSponsors.length + silverSponsors.length + index] = el)}
             >
               <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
                 <SponsorLogo 
@@ -710,12 +749,12 @@ const SponsorSection = () => {
       
       {/* Other Row */}
       {otherSponsors.length > 0 && (
-        <SponsorRow ref={(el) => (sponsorRowsRef.current[2] = el)}>
+        <SponsorRow ref={(el) => (sponsorRowsRef.current[3] = el)}>
           {otherSponsors.map((sponsor, index) => (
             <SponsorCard 
               key={`other-${index}`} 
               tier={sponsor.tier}
-              ref={(el) => (sponsorCardsRef.current[silverSponsors.length + bronzeSponsors.length + index] = el)}
+              ref={(el) => (sponsorCardsRef.current[goldSponsors.length + silverSponsors.length + bronzeSponsors.length + index] = el)}
             >
               <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
                 <SponsorLogo 
@@ -794,6 +833,13 @@ const SponsorRow = styled.div`
   gap: 1rem;
   margin-bottom: 1rem;
   
+  &.gold-row {
+    justify-content: center;
+    grid-template-columns: repeat(1, 250px);
+    justify-self: center;
+    margin: 0 auto 1rem auto;
+  }
+  
   &.bronze-row {
     justify-content: center;
     grid-template-columns: repeat(2, 200px);
@@ -804,6 +850,10 @@ const SponsorRow = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     
+    &.gold-row {
+      grid-template-columns: 1fr;
+    }
+    
     &.bronze-row {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -811,6 +861,10 @@ const SponsorRow = styled.div`
   
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
+    
+    &.gold-row {
+      grid-template-columns: 1fr;
+    }
     
     &.bronze-row {
       grid-template-columns: 1fr;
@@ -826,6 +880,7 @@ const SponsorCard = styled.div`
   position: relative;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 2px solid ${props => 
+    props.tier === 'gold' ? '#d4af37' :
     props.tier === 'silver' ? '#c0c0c0' : 
     props.tier === 'bronze' ? '#cd7f32' : 
     props.tier === 'other' ? '#4ade80' :
@@ -901,6 +956,7 @@ const TierBadge = styled.div`
   top: -5px;
   right: -5px;
   background: ${props => 
+    props.tier === 'gold' ? '#d4af37' :
     props.tier === 'silver' ? '#c0c0c0' : 
     props.tier === 'bronze' ? '#cd7f32' : 
     props.tier === 'other' ? '#4ade80' :

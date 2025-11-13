@@ -376,6 +376,39 @@ export default function Sponsor() {
                         We gratefully acknowledge the generous support of our sponsors who make this conclave possible
                     </Subtitle>
                 </Header>
+                {/* Gold Sponsors Row */}
+                <SponsorTierSection>
+                    <TierTitle>
+                        <TierBadge tier="gold">Gold Sponsors</TierBadge>
+                    </TierTitle>
+                    <SponsorList>
+                        <SponsorCard>
+                            <CardTierBadge tier="gold">Gold sponsor</CardTierBadge>
+                            <SponsorImageLink 
+                                href="https://bcclweb.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <SponsorImage 
+                                    src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/Bharat%20Coking%20Coal.webp"
+                                    alt="Bharat Coking Coal Limited Logo"
+                                    tier="gold"
+                                />
+                            </SponsorImageLink>
+                            <SponsorName>Bharat Coking Coal Limited</SponsorName>
+                            <SponsorDescription>
+                                Established in 1972, BCCL is a subsidiary of Coal India Limited operating coking coal mines in Jharia and Raniganj coalfields.      
+                            </SponsorDescription>
+                            <VisitWebsiteButton 
+                                href="https://bcclweb.in/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Visit Website
+                            </VisitWebsiteButton>
+                        </SponsorCard>
+                    </SponsorList>
+                </SponsorTierSection>
                 
                 {/* Silver Sponsors Row */}
                 <SponsorTierSection>
@@ -519,6 +552,31 @@ export default function Sponsor() {
                             >
                                 Visit Website
                             </VisitWebsiteButton>
+                        </SponsorCard>
+                        <SponsorCard>
+                          <CardTierBadge tier="bronze">Bronze sponsor</CardTierBadge>
+                          <SponsorImageLink 
+                              href="https://dvc.gov.in/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
+                              <SponsorImage 
+                                  src="https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/image.webp" 
+                                  alt="DVC Logo" 
+                                  tier="bronze"
+                              />
+                          </SponsorImageLink>
+                          <SponsorName>Damodar Valley Corporation</SponsorName>
+                          <SponsorDescription>
+                              Established in 1948, DVC is a premier multipurpose river valley project in India, operating thermal and hydro power plants in the Damodar River basin.
+                          </SponsorDescription>
+                          <VisitWebsiteButton 
+                              href="https://dvc.gov.in/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                          >
+                              Visit Website
+                          </VisitWebsiteButton>
                         </SponsorCard>
                     </SponsorList>
                 </SponsorTierSection>
