@@ -440,7 +440,7 @@ const sponsors = [
   },
   {
     tier: 'bronze',
-    name: 'Damodar valley corporation',
+    name: 'Damodar Valley Corporation',
     logo: 'https://cdn.jsdelivr.net/gh/AbhishekBaske/gjmiccdn@main/image.webp',
     url: 'https://www.dvc.gov.in/'
   },
