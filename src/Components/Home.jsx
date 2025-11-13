@@ -777,8 +777,8 @@ const SponsorSection = () => {
 
 const SponsorContainer = styled.div`
   width: 100%;
-  max-width: 600px;
-  padding: 2rem;
+  max-width: 650px;
+  padding: 1.5rem;
   background: linear-gradient(135deg, #fafafa 0%, #f8f9fa 25%, #f1f3f4 50%, #e8eaed 75%, #f0f2f5 100%);
   border-radius: 12px;
   box-shadow: 
@@ -806,11 +806,11 @@ const SponsorContainer = styled.div`
 `;
 
 const SponsorTitle = styled.h2`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #2c3e50;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
   position: relative;
   
@@ -830,21 +830,21 @@ const SponsorTitle = styled.h2`
 const SponsorRow = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
   
   &.gold-row {
     justify-content: center;
-    grid-template-columns: repeat(1, 250px);
+    grid-template-columns: repeat(1, 200px);
     justify-self: center;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 0.75rem auto;
   }
   
   &.bronze-row {
     justify-content: center;
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(3, 160px);
     justify-self: center;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 0.75rem auto;
   }
   
   @media (max-width: 768px) {
@@ -855,7 +855,7 @@ const SponsorRow = styled.div`
     }
     
     &.bronze-row {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   
@@ -874,8 +874,8 @@ const SponsorRow = styled.div`
 
 const SponsorCard = styled.div`
   background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
-  border-radius: 12px;
-  padding: 1.2rem;
+  border-radius: 8px;
+  padding: 0.8rem;
   text-align: center;
   position: relative;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -925,10 +925,10 @@ const SponsorCard = styled.div`
 `;
 
 const SponsorLogo = styled.img`
-  width: 85px;
-  height: 65px;
+  width: 70px;
+  height: 55px;
   object-fit: contain;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   transition: all 0.3s ease;
   filter: brightness(1) contrast(1.1);
   
@@ -939,11 +939,11 @@ const SponsorLogo = styled.img`
 `;
 
 const SponsorName = styled.h4`
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #374151;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
   transition: color 0.3s ease;
   
   ${SponsorCard}:hover & {
